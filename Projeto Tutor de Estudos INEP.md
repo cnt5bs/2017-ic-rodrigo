@@ -119,7 +119,12 @@ e. Verificação e validação
   Foram encontradas fontes, confiáveis, do meio acadêmico, que nos permitiu elaborar um modelo mental do questionário do INEP.
   </li>
   <li>Questionários de Múltipla Escolha - MCQ: Modelo de domínio MCQ - O objetivo ainda não cumprido, pois foi descoberto que o modelo de domínio deve ser pensado conforme o desenvolvimento do estudo do INEP e ao levantamento dos requisitos do tutor do INEP.
-  A análise do documento do INEP foi concluída porém, o levantamento dos requisitos ainda não foram terminados. O modelo de domínio deve ser arquitetado levando em consideração as multiplas restrições que teremos nos requisitos.</li>
+  A análise do documento do INEP foi concluída porém, o levantamento dos requisitos ainda não foram terminados. O modelo de domínio deve ser arquitetado levando em consideração as multiplas restrições que teremos nos requisitos.
+  <br>
+  Até o momento foi elaborado um modelo da seguinte maneira:
+  <br>
+  <img src="./TutorDeEstudosINEP.png" />
+  </li>
 <li>Questionários de Múltipla Escolha - MCQ: Requisitos do tutor de estudo - Os requisitos náo começaram a ser levantados pois houve um atraso para encontrar a documentação do INEP, até encontrar uma fonte confiável, e os estudos sobre modelo de domínio se mostraram complexos demais em comparação com o que foi imaginado.</li>
 </ul>
 
@@ -130,7 +135,17 @@ e. Verificação e validação
       Os livros lidos para o entendimento do assunto foram acertos no desenvolvimento da pesquisa, pela forma que tratavam o paradigma que estamos estudando (orientação a objetos).
       <br>
       Não ter fontes secundárias para o desenvolvimento do estudo do questionário do INEP, foi muito prejudicial ao desenrolar da pesquisa e consequentemente ao cronograma. Deveríamos ter pesquisado fontes acadêmicas com informações extras e até mesmo iguais, que fossem confiáveis, antes de começar o estudo.
-
+      <br>
+      O mais importante do modelo elaborado sobre a estrutura da pesquisa, é, identificar o tipo de usuário por trás de cada informação, com a maior precisão possível. Esta documentação deve ser criteriozamente armazenada levando em consideração a situação geográfica, acadêmica, profissional, social, e governamental do estudante. Assim poderemos estabelecer uma relação entre o contexto do estudante e o que ele esta errando, para podermos o orientar melhor.
+      <br>
+      Os requisitos devem ser modelados em paralelo ao estudo do INEP e a elaboração do modelo.
+      Não faz sentido serpará-los, e a pesquisa foi prejudicada por não considerarmos todos os aspectos de requisitos durante a elaboração do modelo.
+      <br>
+      O mais importante para a pesquisa a partir desta data, é começarmos a elaboração da integração entre o modelo e os requistos levantados posteriormente, ao início da elaboração da modelagem. A modelagem, por ter sido iniciada antes do levantamento de requisitos, foi refatorada para atender de forma mais explícita as necessidades dos requisitos.
+      <br>
+      Feito isso a pesquisa deve prosseguir para o modelo arquitetural e modelo de implementação. E dai prosseguir com o cronograma.
+      <br>
+      A parte mais importante da pesquisa até o momento, é o entendimento de que o modelo de estudante, deve ser preciso para que uma inteligência consiga trazer melhores critérios de melhorias e melhores análises de resultados pós prova, questionário, e estudo.
   </div>
 </div>
 </div>
