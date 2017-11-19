@@ -5,11 +5,9 @@
 <br /><br /><br /><br /><br />
 <div style="page-break-after: always;"></div>
 <div style="margin-left:100px">
-<h2>- Relatório
-<br>
-<br>
- 1.0</h2>
+<h2>Sumário </h2>
 <ul>
+<li><b>Relatório 1</b></li>
   <li>1.1​ ​A​ ​pesquisa​</li>
   <li>1.2​ ​O​ ​INEP</li>
   <li>1.3 Cronograma</li>
