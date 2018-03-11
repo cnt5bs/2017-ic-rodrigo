@@ -257,12 +257,14 @@ Fonte: elaborado pelo autor
 *Questionários de Múltipla Escolha* - MCQ:
 Modelo arquitetural --
 
-O modelo arquitetural começou a ser desenvolvido. 
+O modelo arquitetural esta sendo desenvolvido. 
 A pesquisa possui definidos estes modelos:
 -Modelo arquitetural da solução web.
     Ilustrado na figura: <<fig:diag-arquitetura>>
+
 -Modelo arquitetural de montagem de padrões de alunos por aprendizado de máquina.
     Representado na figura: <<fig:diag-ia>>
+
 -Modelo de dados de usuários, perguntas e respostas.
     Representado na figura: <<fig:diag-perguntas>>
 
