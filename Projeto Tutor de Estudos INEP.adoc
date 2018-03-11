@@ -177,7 +177,6 @@ EVANS, E. Domain Driven Design: 2. ed. Rio de Janeiro: ALTA BOOKS, 2010
 O livro traz técnicas de modelagem de objetos voltados e visados à necessidade contextual enfrentada, assim, se distanciando de soluções somente técnológicamente arquitetadas.
 //FEITO: italo: evite superlativos ("importantíssimo") em textos técnicos
 O livro foi relevante para a elaboração, organização e arquitetura das entidades contextuais da pesquisa.
-Trata de maneira fácil, ágil, e inteligente dos assuntos. // italo: acredito ser este o propósito de um texto técnico
 
 {counter2:nfig}
 [[fig:diag-mcq, Fig {counter:nfig}]]
