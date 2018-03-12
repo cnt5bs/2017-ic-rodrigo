@@ -154,6 +154,7 @@ Um dos resultados deste pensamento é o modelo de domínio elaborado.
 Já tinha sido apresentado ao tópico em sala de aula, no bacharelado da PUCSP, onde nas matérias de engenharia de software e laboratório de programação, foram elaborados modelos de domínio.
 Conhecimentos posteriores, vieram de prática e do livro "Análise estruturada de sistemas", dos autores Chris Gane e Trish Sarson.
 // italo: corrigir de acordo com o formato ABNT
+
 Gane, C.;Sarson, T., Análise estruturada de sistemas: 1. ed. São Paulo: Livros Técnicos e Científicos Editora S.A., 1983
 
 //FEITO: italo: o que significa "tratar fluxos e diagramas de maneira cautelosa"?
@@ -176,7 +177,9 @@ Com o estudo, foi elaborado, por exemplo, o modelo de estudante.
 Já havia sido apresentado ao tópico durante o curso de bacharelado da PUCSP, onde nas matérias de orientação a objetos e laboratório de programação, foram elaboradas e arquitetadas aplicações orientadas a objetos.
 Conhecimentos posteriores, vieram de prática e do livro "Domain Driven Design", do autor Eric Evans, que por mais que não trate diretamente do paradigma, trata de desenvolvimento de aplicações com o paradigma.
 // italo: não está no formato ABNT <---------------------------------------------
+
 EVANS, E. Domain Driven Design: 2. ed. Rio de Janeiro: ALTA BOOKS, 2010
+
 O livro traz técnicas de modelagem de objetos voltados à necessidade contextual enfrentada, assim, se distanciando de soluções somente técnológicamente arquitetadas.
 //FEITO: italo: evite superlativos ("importantíssimo") em textos técnicos
 O livro foi relevante para a elaboração, organização e arquitetura das entidades contextuais da pesquisa.
@@ -193,7 +196,7 @@ Estudo do Guia de Elaboração e Revisão de Itens do INEP --
 O estudo foi realizado e concluído.
 O seguinte modelo da entidade de questionários foi elaborado inspirado nas restrições e requisitos expostos no Guia de Elaboração e Revisão de Itens do INEP para elaboração de perguntas e alternativas.
 Durante a pesquisa foi identificado que o documento não estava mais disponível. Encontrou-se a necessidade então de procurar o documento em outro local.
-Foi possível encontrar o Guia de Elaboração e Revisão de Itens do INEP no site de outra prova aplicada pelo INEP. A "provinha brasil".
+Foi possível encontrar o Guia de Elaboração e Revisão de Itens do INEP no site de outra prova aplicada pelo INEP. A "Provinha Brasil"(presente na bibliografia).
 
 //ABNT
 //FEITO: italo: se o arquivo não estava mais disponível, como foi possível utilizã-lo?
