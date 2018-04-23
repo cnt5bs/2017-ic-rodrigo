@@ -1,1 +1,6 @@
 http://ec2-35-161-114-73.us-west-2.compute.amazonaws.com/
+
+http://ec2-35-161-114-73.us-west-2.compute.amazonaws.com/cms
+
+usuario: teste
+senha: teste
