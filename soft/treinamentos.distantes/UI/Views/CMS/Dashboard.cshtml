@@ -1,0 +1,62 @@
+﻿@model UI.ViewModels.CMSDashboard
+@{
+    ViewBag.Title = "Dashboard";
+}
+
+@Html.Partial("InnerMenu", Model.autorization)
+
+<div class="row" style="margin-top:80px">
+    <h2>Painel de Aulas </h2>
+</div>
+<div class="row" style="margin-top:40px">
+    
+    @foreach (var post in Model.posts)
+    {
+        if (post.Orientacao != null)
+        {
+            if (post.Orientacao[0] != null)
+            {
+                <div class="col-sm-4 col-xs-12">
+                    <div class="card text-center" style="min-height: 480px;padding:40px;padding-left:10px;padding-right:10px;width:100%!important;cursor:pointer">
+                        <div class="container text-left">
+                            <div class="col-xs-12">
+                                <h5><b>Nome da postagem :</b> @post.nome</h5>
+                                <h5><b>Subtítulo da postagem :</b> @post.subtitulo</h5>
+                                <p><b>Descrição na postagem :</b> @post.descricao</p>
+                                <p><b>Nome da orientação :</b> @post.Orientacao[0].nome</p>
+                                @if (post.Orientacao[0].questionario != null)
+                                {
+                                    <p><b>Nome vídeo : </b> @post.Orientacao[0].questionario[0].nome</p>
+                                    <form method="post" action="@Url.Content("~/CMS/CreateQuestionLoadPage")">
+                                        <input type="hidden" name="postID" value="@post.ID" />
+                                        <input type="hidden" name="userID" value="@Model.autorization.user.ID" />
+                                        <input type="submit" class="btn btn-warning" value="Editar Questões" />
+                                    </form>
+                                }
+                                <form method="post" action="@Url.Content("~/CMS/LoadEditPostPage")">
+                                    <input type="hidden" name="postID" value="@post.ID" />
+                                    <input type="hidden" name="userID" value="@Model.autorization.user.ID" />
+                                    <input type="submit" class="btn btn-warning" value="Editar" />
+                                </form>
+
+                                <form method="post" action="@Url.Content("~/CMS/DeletePost")">
+                                    <input type="hidden" name="postID" value="@post.ID" />
+                                    <input type="hidden" name="userID" value="@Model.autorization.user.ID" />
+                                    <input type="submit" class="btn btn-danger" value="X" />
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            }
+        }
+    }
+</div>
+<script>
+    @if (ViewBag.RecordLogin == "S")
+    {
+        <text> window.sessionStorage.setItem('userID', '@Model.autorization.user.ID'); </text>
+    }
+</script>
+@Html.Partial("Base", Model.autorization)

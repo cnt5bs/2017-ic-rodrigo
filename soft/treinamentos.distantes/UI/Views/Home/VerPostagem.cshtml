@@ -1,0 +1,62 @@
+﻿@model UI.ViewModels.PostVM
+@{
+    ViewBag.Title = "Vídeo";
+}
+@Html.Partial("SidebarMenu", new UI.ViewModels.SideBarHeaderVM() { posts = Model.autorization.user.posts.Where(u => u.active == true).OrderByDescending(u => u.ordem).ToList(), autorization = Model.autorization })
+@if (Model.post.pages  == null || Model.post.pages.Where(u => u.active == true).OrderByDescending(u => u.ordem).ToList()[Model.pageIndex].name == "Orientacao")
+{
+    <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+            <iframe src="@Model.post.Orientacao[0].path" width="100%" height="400px" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+            <h2>@Model.post.nome</h2>
+            <h3>@Model.post.subtitulo</h3>
+            <p>@Model.post.descricao</p>
+
+
+            @if (Model.post.pages != null)
+            {
+                @Html.ActionLink("Próxima etapa >>>", "PostNextStep", "Home", new { postID = Model.post.ID, currentIndex = Model.pageIndex, userID = Model.autorization.user.ID }, new { @class = "navbar-brand" })
+            }
+
+            <!--
+            @if (Model.post.Orientacao[0].questionario != null)
+            {
+                <p>
+                    @Html.ActionLink("Realizar exame >>>", "MakeTest", "Home", new { postID = Model.post.ID, questionID = Model.post.Orientacao[0].questionario[0].ID, userID = Model.autorization.user.ID }, new { @class = "navbar-brand" })
+                </p>
+            }
+            -->
+
+            @Html.ActionLink("Voltar para a Home", "Dashboard", "Home", new { userID = Model.autorization.user.ID }, new { @class = "navbar-brand" })
+        </div>
+    </div>
+}
+else
+{
+    <div class="row">
+        <div class="jumbotron col-xs-12" style="padding-bottom:5px; padding-top:5px">
+            <h1 style="text-align: center; font-size:30px; font-weight:bold; font-family:'Calibri', 'Verdana', 'Arial', 'Helvetica', 'sans-serif';">ATENÇÃO</h1>
+        </div>
+
+        <div class="col-xs-8" style="margin-left:16.6%; padding:60px">
+            <p style="font-family: 'Calibri', 'Verdana', 'Arial', 'Helvetica', 'sans-serif'; font-size: 22px; text-align: center ">@Model.post.pages.Where(u => u.active == true).OrderByDescending(u => u.ordem).ToList()[Model.pageIndex].text</p>
+        </div>
+        @if (Model.post.pages.Where(u => u.active == true).OrderByDescending(u => u.ordem).ToList()[Model.pageIndex].hasOrientacao)
+        {
+            <div class="row">
+                <div class="col-xs-8" style="margin-left:16.6%">
+                    <iframe class="col-xs-12" width="560" height="575" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen src="@Model.post.pages.Where(u => u.active == true).OrderByDescending(u => u.ordem).ToList()[Model.pageIndex].OrientacaoPath"></iframe>
+                </div>
+            </div>
+        }
+        
+
+        @Html.ActionLink("Próxima etapa >>>", "PostNextStep", "Home", new { postID = Model.post.ID, currentIndex = Model.pageIndex ,userID = Model.autorization.user.ID }, new { @class = "navbar-brand" })
+
+    </div>
+}
+@Html.Partial("Base", Model.autorization)

@@ -1,0 +1,142 @@
+﻿@model UI.ViewModels.PagesEditVM
+@{
+    ViewBag.Title = "Fluxo";
+}
+
+@Html.Partial("InnerMenu", Model.autorization)
+
+<div class="navbar navbar-inverse navbar-fixed-top" style="margin-top:57px">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Adm. de tópicos", "ManagePagesLoadPage", "CMS", new { postID = Model.post.ID, userID = Model.autorization.user.ID }, new { @class = "navbar-brand" })</li>
+                <li>@Html.ActionLink("Relações Acadêmicas", "BindPostLoadPage", "CMS", new { postID = Model.post.ID, userID = Model.autorization.user.ID }, new { @class = "navbar-brand" })</li>
+                <li>@Html.ActionLink("Perguntas", "CreateQuestionLoadPage", "CMS", new { postID = Model.post.ID, userID = Model.autorization.user.ID }, new { @class = "navbar-brand" })</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+
+    <div class="col-xs-12 col-sm-6" style="margin-top:90px">
+        <div class="card text-center" style="padding:40px;width:100%!important;cursor:pointer">
+            <div class="container text-left">
+                <h4>Criar nova página : </h4>
+                <form method="post" action="@Url.Content("~/CMS/AddTextPage")">
+                    <label>Nome da página (Não pode se repetir, caso já exista uma página com esse nome, será utilizada a existente)</label>
+                    <input class="form-control" type="text" name="name" />
+                    <label>Incorporacao</label>
+                    <input style="height: 30px;" class="col-xs-12" type="checkbox" value="true" name="hasOrientacao" />
+                    <label>Caminho incorporação</label>
+                    <input class="form-control" type="text" name="OrientacaoPath" />
+                    <input type="hidden" name="postID" value="@Model.post.ID" />
+                    <label>
+                        Texto da página(Você criará páginas do tipo texto)
+                    </label>
+                    <textarea name="text" class="form-control" style="height:250px">
+        
+                        </textarea>
+                    <input class="form-control" type="hidden" name="userID" value="@Model.autorization.user.ID" />
+                    <input type="submit" value="Adicionar" class="btn btn-primary" />
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-6" style="margin-top:90px">
+        <div class="card text-center" style="padding:40px;width:100%!important;cursor:pointer">
+            <div class="container text-left">
+                <h4>Vincular alguma página já existente : </h4>
+                @foreach (var page in Model.pages)
+                {
+                    <p>@page.name</p>
+                    <p>@page.type</p>
+                    <form action="@Url.Content("~/CMS/AddTextPage")" method="post">
+                        <input type="hidden" name="postID" value="@Model.post.ID" />
+                        <input type="hidden" name="name" value="@page.name" />
+                        <input type="hidden" name="text" value="@page.text" />
+                        <input class="form-control" type="hidden" name="userID" value="@Model.autorization.user.ID" />
+                        <input type="submit" value="Vincular" class="btn btn-primary" />
+                    </form>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" style="margin-top:30px">
+
+    <div class="col-xs-12" style="margin-top:20px">
+        <div class="col-xs-3">
+            NOME DA PÁGINA
+        </div>
+        <div class="col-xs-3">
+            DELETADA OU NÃO
+        </div>
+        <div class="col-xs-3">
+            ORDEM DA PÁGINA
+        </div>
+        <div class="col-xs-3">
+            DELETAR PÁGINA(DA POSTAGEM)
+        </div>
+    </div>
+
+</div>
+
+@foreach (var page in Model.post.pages)
+            {
+    <div class="row" style="margin-top:15px">
+        <div class="col-xs-12 col-sm-12">
+            <div class="card text-center" style="padding:10px;width:100%!important;cursor:pointer">
+                <div class="container text-left">
+                    <div class="col-xs-12">
+                        <div class="col-xs-3">@page.name</div>
+
+                        @if (page.active)
+                        {
+                            <text><div class="col-xs-3" style="color:green">
+                                    ATIVA
+                                </div></text>
+                        }
+                        else
+                        {
+                            <text><div class="col-xs-3" style="color:red">
+                                    INATIVA
+                                </div></text>
+
+                        }
+
+
+                        <div class="col-xs-3">
+                            <form action="@Url.Content("~/CMS/UpdatePageOrder")" method="post">
+                                <input type="hidden" name="postID" value="@Model.post.ID" />
+                                <input type="hidden" name="pageName" value="@page.name" />
+                                <input type="number" value="@page.ordem" name="ordem" style="height:34px" class="col-xs-3" />
+                                <input class="form-control" type="hidden" name="userID" value="@Model.autorization.user.ID" />
+                                <input type="submit" value="Modificar" class="btn btn-warning" />
+                            </form>
+                        </div>
+                        <div class="col-xs-3">
+                            <form action="@Url.Content("~/CMS/DeletePage")" method="post">
+                                <input type="hidden" name="postID" value="@Model.post.ID" />
+                                <input type="hidden" name="pageName" value="@page.name" />
+                                <input class="form-control" type="hidden" name="userID" value="@Model.autorization.user.ID" />
+                                <input type="submit" class="btn btn-danger" value="X" />
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@Html.Partial("Base", Model.autorization)

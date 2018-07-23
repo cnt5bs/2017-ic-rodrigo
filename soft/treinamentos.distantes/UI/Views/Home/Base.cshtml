@@ -1,0 +1,19 @@
+﻿@model UI.ViewModels.Autentication
+<script>
+function getItem()
+{
+    if (window.sessionStorage.getItem('userID') == '@Model.user.ID')
+    {
+
+    }
+    else
+    {
+        window.location = 'http://localhost/';
+    }
+}
+
+function removeItem(){
+    window.sessionStorage.removeItem('userID');
+}
+getItem();
+</script>

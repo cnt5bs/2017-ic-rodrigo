@@ -1,0 +1,42 @@
+﻿@model UI.ViewModels.QuestionarioVM
+@{
+    ViewBag.Title = "About";
+}
+@Html.Partial("SidebarMenu", new UI.ViewModels.SideBarHeaderVM() { posts = Model.posts, autorization = Model.autorization })
+<div class="row">
+    <form action="@Url.Content("~/Home/MakeTestNextStep")" method="post">
+
+        <div class="jumbotron col-xs-12" style="padding-bottom:5px; padding-top:5px">
+            <h1 style="text-align: center; font-size:30px; font-weight:bold; font-family:'Calibri', 'Verdana', 'Arial', 'Helvetica', 'sans-serif';">@Model.questionario.nome</h1>
+        </div>
+
+        <div class="col-xs-12">@Model.questionario.perguntas[Model.questionIndex].name</div>
+        @if (Model.questionario.perguntas[Model.questionIndex].options != null)
+        {
+            foreach (var answer in Model.questionario.perguntas[Model.questionIndex].options.Where(o => o.active))
+            {
+                <div class="row">
+                    <div class="col-xs-12">
+                        <input class="" style="WIDTH: 50px;" name="resposta" type="radio" value="@answer.nome" />
+                        <label style="">@answer.aparece</label>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <text>Pergunta sem alternativas.</text>
+        }
+
+        <div class="row">
+            <input type="hidden" value="@Model.post.ID" name="postID" />
+            <input type="hidden" value="@Model.autorization.user.ID" name="userID" />
+            <input type="hidden" value="@Model.questionIndex" name="questionIndex" />
+            <input type="hidden" value="@Model.pageCurrentIndex" name="pageCurrentIndex" />
+            
+            <input type="submit" class="btn btn-success pull-right" style="margin-top:20px" value="Responder >>>" />
+        </div>
+    </form>
+</div>
+
+@Html.Partial("Base", Model.autorization)

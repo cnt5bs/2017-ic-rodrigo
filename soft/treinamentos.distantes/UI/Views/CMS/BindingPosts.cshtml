@@ -1,0 +1,97 @@
+﻿@model UI.ViewModels.BindingPostsVM
+@{
+    ViewBag.Title = "Vinculação de postagens";
+}
+
+@Html.Partial("InnerMenu", Model.autorization)
+<div class="navbar navbar-inverse navbar-fixed-top" style="margin-top:57px">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Adm. de tópicos", "ManagePagesLoadPage", "CMS", new { postID = Model.post.ID, userID = Model.autorization.user.ID }, new { @class = "navbar-brand" })</li>
+                <li>@Html.ActionLink("Relações Acadêmicas", "BindPostLoadPage", "CMS", new { postID = Model.post.ID, userID = Model.autorization.user.ID }, new { @class = "navbar-brand" })</li>
+                <li>@Html.ActionLink("Perguntas", "CreateQuestionLoadPage", "CMS", new { postID = Model.post.ID, userID = Model.autorization.user.ID }, new { @class = "navbar-brand" })</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<h4>Vincule postagens que auxiliariam o aluno durante o seu estudo.</h4>
+
+<div class="row">
+    <style>
+        .card {
+            box-shadow: 0px 4px 8px 4px rgba(0,0,0,0.2);
+            transition: 0.3s;
+            width: 40%;
+        }
+
+            .card:hover {
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            }
+
+        .container {
+            padding: 2px 16px;
+        }
+    </style>
+
+    <div class="col-sm-6 col-xs-12">
+        @foreach (var post in Model.allPostsNotBind)
+        {
+                <div class="col-xs-12" style="margin-left:24.444444%">
+                    <div class="card text-center" style="padding:40px;width:100%!important;cursor:pointer">
+
+                        <div class="container text-center">
+                            <h5 class="card-title">@post.nome</h5>
+                            <p><bold>@post.subtitulo</bold></p>
+                            <p class="card-text">@post.descricao</p>
+                            <form method="post" action="@Url.Content("~/CMS/BindPostToPost")">
+                                <div class="col-xs-12">
+                                    
+                                    <input type="hidden" name="postID" value="@Model.post.ID" />
+                                    <input type="hidden" name="postBindID" value="@post.ID" />
+                                    <input type="hidden" name="userID" value="@Model.autorization.user.ID" />
+                                    <input type="submit" value="Adicionar" class="btn btn-primary" />
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+        }
+    </div>
+    <div class="col-sm-6 col-xs-12">
+        @foreach (var bindpost in Model.allPostsBind)
+        {
+            <div class="col-xs-12" style="margin-left:24.444444%">
+                <div class="card text-center" style="padding:40px;width:100%!important;cursor:pointer">
+
+                    <div class="container text-center">
+                        <h5 class="card-title">@bindpost.nome</h5>
+                        <p><bold>@bindpost.subtitulo</bold></p>
+                        <p class="card-text">@bindpost.descricao</p>
+                        <form method="post" action="@Url.Content("~/CMS/UnbindPostFromPost")">
+                            
+                            <input type="hidden" name="postID" value="@Model.post.ID" />
+                            <input type="hidden" name="postUnbindID" value="@bindpost.ID" />
+                            <input type="hidden" name="userID" value="@Model.autorization.user.ID" />
+                            <input type="submit" value="X" class="btn btn-danger" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+
+
+
+@Html.Partial("Base", Model.autorization)

@@ -1,0 +1,16 @@
+@model UI.ViewModels.QuestionarioVM
+
+@Html.Partial("InnerMenu", Model.autorization)
+<form action="@Url.Content("~/CMS/EditPost")" method="post">
+    <input type="text" class="form-control" name="nome" value="@Model.post.nome" />
+    <input type="text" class="form-control" name="subtitulo" value="@Model.post.subtitulo" />
+    <input type="text" class="form-control" name="descricao" value="@Model.post.descricao" />
+    <input type="text" class="form-control" name="observacao" value="@Model.post.observacao" />
+    <input type="text" class="form-control" name="ordem" value="@Model.post.ordem" />
+    <input type="text" class="form-control" name="videoPath" value="@Model.Orientacao.path" />
+    <input type="hidden" name="userID" value="@Model.autorization.user.ID" />
+    <input type="hidden" name="ID" value="@Model.post.ID" />
+    <input type="submit" value="Atualizar"/>
+</form>
+
+@Html.Partial("Base", Model.autorization)

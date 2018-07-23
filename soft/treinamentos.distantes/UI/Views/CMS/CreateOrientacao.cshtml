@@ -1,0 +1,26 @@
+﻿@model UI.ViewModels.PostEditVM
+@{
+    ViewBag.Title = "";
+}
+@Html.Partial("InnerMenu", Model.autorization)
+<div class="row" style="margin-top:30px">
+    <div class="col-sm-6 col-xs-12">
+        <div class="card text-center" style="padding:10px;width:100%!important;cursor:pointer">
+            <div class="container text-left">
+
+                <h4>Criar Orientação Principal</h4>
+
+                <form method="post" action="@Url.Content("~/CMS/CreateOrientacao")">
+                    <label>Nome</label>
+                    <input required class="form-control" type="text" name="nome" />
+                    <label>Caminho</label>
+                    <input required class="form-control" type="text" name="path" />
+                    <input class="form-control" type="hidden" name="userID" value="@Model.autorization.user.ID" />
+                    <input type="hidden" value="@Model.post.ID" name="postID" id="postID" />
+                    <input class="btn btn-primary" type="submit" value="Próxima Etapa" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@Html.Partial("Base", Model.autorization)

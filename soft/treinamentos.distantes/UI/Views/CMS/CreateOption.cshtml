@@ -1,0 +1,93 @@
+﻿@model UI.ViewModels.CreateOptionsVM
+@{
+    ViewBag.Title = "CreateOption";
+}
+
+@Html.Partial("InnerMenu", Model.autorization)
+
+<div class="navbar navbar-inverse navbar-fixed-top" style="margin-top:57px">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Adm. de tópicos", "ManagePagesLoadPage", "CMS", new { postID = Model.post.ID, userID = Model.autorization.user.ID }, new { @class = "navbar-brand" })</li>
+                <li>@Html.ActionLink("Relações Acadêmicas", "BindPostLoadPage", "CMS", new { postID = Model.post.ID, userID = Model.autorization.user.ID }, new { @class = "navbar-brand" })</li>
+                <li>@Html.ActionLink("Perguntas", "CreateQuestionLoadPage", "CMS", new { postID = Model.post.ID, userID = Model.autorization.user.ID }, new { @class = "navbar-brand" })</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-xs-12 col-sm-6" style="margin-top:90px">
+        <div class="card text-center" style="padding:40px;width:100%!important;cursor:pointer">
+            <div class="container text-left">
+                <h4>Criar Alternativa</h4>
+
+                <form method="post" action="@Url.Content("~/CMS/CreateOption")">
+                    <label>Nome para identificação</label>
+                    <input required class="form-control" type="text" name="nome" />
+                    <label>Alternativa : </label>
+                    <input required class="form-control" type="text" name="aparece" />
+                    <input class="form-control" type="hidden" name="questionName" value="@Model.questionName" />
+                    <input class="form-control" type="hidden" name="questionarioID" value="@Model.post.Orientacao[0].questionario[0].ID" />
+                    <input class="form-control" type="hidden" name="postID" value="@Model.post.ID" />
+                    <input class="form-control" type="hidden" name="userID" value="@Model.autorization.user.ID" />
+                    <input class="btn btn-primary" style="margin-top:10px" type="submit" value="+" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@if (Model.options != null)
+{
+    foreach (var option in Model.options)
+    {
+        <div class="row">
+            <div class="col-xs-12 col-sm-6" style="margin-top:90px">
+                <div class="card text-center" style="padding:40px;width:100%!important;cursor:pointer">
+                    <div class="container text-left">
+                        <div class="col-xs-8">
+                           ID : @option.nome | Alternativa : @option.aparece - @if (option.active)
+                           { <text><span style="color:lawngreen">ATIVO</span></text> }
+                           else
+                           { <text><span style="color:red">INATIVO</span></text> }
+                        </div>
+                        <form method="post" action="@Url.Content("~/CMS/DeactivateOption")">
+                            <input type="hidden" value="@Model.post.ID" name="postID" />
+                            <input type="hidden" value="@Model.post.Orientacao[0].questionario[0].ID" name="questionaryID" />
+                            <input type="hidden" value="@Model.questionName" name="questionName" />
+                            <input type="hidden" value="@option.nome" name="optionName" />
+                            <input class="form-control" type="hidden" name="userID" value="@Model.autorization.user.ID" />
+                            <input type="submit" class="btn btn-danger pull-right" value="X" />
+                        </form>
+                        @if (Model.post.Orientacao[0].questionario[0].perguntas.Where(p => p.name == Model.questionName && p.correctAnswerID == option.nome).SingleOrDefault() == null)
+                        {
+                            <form action="@Url.Content("~/CMS/setCorrectAnswer")">
+                                <input type="hidden" value="@Model.post.ID" name="postID" />
+                                <input type="hidden" value="@Model.post.Orientacao[0].questionario[0].ID" name="questionaryID" />
+                                <input type="hidden" value="@Model.questionName" name="questionID" />
+                                <input type="hidden" value="@option.nome" name="answerID" />
+                                <input class="form-control" type="hidden" name="userID" value="@Model.autorization.user.ID" />
+                                <input type="submit" class="btn btn-primary pull-right" value="Correta" />
+                            </form>
+                        }
+                        
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}
+
+@Html.Partial("Base", Model.autorization)

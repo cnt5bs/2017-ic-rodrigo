@@ -1,0 +1,79 @@
+﻿@model UI.ViewModels.PostEditVM
+@{
+    ViewBag.Title = "CreateQuestion";
+}
+
+@Html.Partial("InnerMenu", Model.autorization)
+
+<div class="navbar navbar-inverse navbar-fixed-top" style="margin-top:57px">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Adm. de tópicos", "ManagePagesLoadPage", "CMS", new { postID = Model.post.ID, userID = Model.autorization.user.ID }, new { @class = "navbar-brand" })</li>
+                <li>@Html.ActionLink("Relações Acadêmicas", "BindPostLoadPage", "CMS", new { postID = Model.post.ID, userID = Model.autorization.user.ID }, new { @class = "navbar-brand" })</li>
+                <li>@Html.ActionLink("Perguntas", "CreateQuestionLoadPage", "CMS", new { postID = Model.post.ID, userID = Model.autorization.user.ID }, new { @class = "navbar-brand" })</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12 col-sm-6" style="margin-top:90px">
+        <div class="card text-center" style="padding:40px;width:100%!important;cursor:pointer">
+            <div class="container text-left">
+                <h4>Adm. de Perguntas do exame</h4>
+                <div class="row">
+                    <form method="post" action="@Url.Content("~/CMS/CreateQuestion")">
+                        <label>Pergunta</label>
+                        <input required class="form-control" type="text" name="name" />
+                        <input class="form-control" type="hidden" name="tempoParaResponder" />
+
+                        <input type="hidden" value="@Model.post.ID" name="postID" />
+                        <input type="hidden" value="@Model.post.Orientacao[0].questionario[0].ID" name="questionario" />
+                        <input class="form-control" type="hidden" name="userID" value="@Model.autorization.user.ID" />
+                        <input type="submit" style="margin-top:10px" class="btn btn-primary" value="+" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@if (Model.post.Orientacao[0].questionario[0].perguntas != null)
+{
+    foreach (var question in Model.post.Orientacao[0].questionario[0].perguntas)
+    {
+        <div class="row">
+            <div class="col-xs-12 col-sm-6" style="margin-top:50px">
+                <div class="card text-center" style="padding:10px;width:100%!important;cursor:pointer">
+                    <div class="container text-left">
+                        <div class="col-xs-12">
+                            @Html.ActionLink("Adicionar opções a " + question.name, "OptionsLoadPage", "CMS", new { questionName = question.name, questionarioID = Model.post.Orientacao[0].questionario[0].ID, postID = Model.post.ID, userID = Model.autorization.user.ID }, new { @class = "navbar-brand" })
+                            @if (question.active)
+                    { <text><span class="pull-left" style="color:lawngreen;margin-top:7px">ATIVO</span></text> }
+                    else
+                    { <text><span class="pull-left" style="color:red;margin-top:7px">INATIVO</span></text> }
+                            <form method="post" action="@Url.Content("~/CMS/DeactivateQuestion")">
+                                <input type="hidden" value="@Model.post.ID" name="postID" />
+                                <input type="hidden" value="@Model.post.Orientacao[0].questionario[0].ID" name="questionaryID" />
+                                <input type="hidden" value="@question.name" name="questionName" />
+                                <input type="submit" class="btn btn-danger" value="X" />
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    }
+}
+
+
+@Html.Partial("Base", Model.autorization)

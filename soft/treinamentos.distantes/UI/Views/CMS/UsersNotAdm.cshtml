@@ -1,0 +1,73 @@
+﻿@model UI.ViewModels.UserNotAdmVM
+@{
+    ViewBag.Title = "UsersNotAdm";
+}
+
+@Html.Partial("InnerMenu", Model.autorization)
+
+<div class="row" style="margin-top:40px">
+    <h2>Adm. Usuários Alunos.</h2>
+</div>
+
+<div class="row">
+    <div class="col-xs-12 col-sm-6" style="margin-top:50px">
+        <div class="card text-center" style="padding:40px;width:100%!important;cursor:pointer">
+            <div class="container text-left">
+                <div class="col-xs-12">
+                    <h4>Adicionar usuário Aluno</h4>
+
+                    <form method="post" action="@Url.Content("~/CMS/AddNotAdmUser")">
+                        <label>Login</label>
+                        <input type="text" name="login" class="form-control" />
+                        <label>Senha</label>
+                        <input type="password" name="password" class="form-control" />
+                        <label>Nome</label>
+                        <input type="text" name="name" class="form-control" />
+                        <label>Email</label>
+                        <input type="email" name="email" class="form-control" />
+                        <input type="hidden" name="userID" value="@Model.autorization.user.ID" />
+                        <input type="submit" class="btn btn-default" value="Registrar" style="margin-top:10px" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@foreach (var user in Model.users)
+{
+    <div class="row" style="margin-top:30px">
+        <div class="card text-center" style="padding:10px;width:100%!important;cursor:pointer">
+            <div class="container text-left">
+                <div class="col-xs-12">
+                    <div class="col-xs-8" style="margin-top:7px">@user.name        |       @user.email</div>
+
+                    
+
+                    <form action="@Url.Content("~/CMS/DeleteNotAdmUser")">
+                        <input type="hidden" name="userID" value="@Model.autorization.user.ID" />
+                        <input type="hidden" name="userDeletedID" value="@user.ID" />
+                        <input class="btn btn-danger pull-right" type="submit" value="X" />
+                    </form>
+                    <form action="@Url.Content("~/CMS/EditUserLoadPage")">
+                        <input type="hidden" name="userID" value="@Model.autorization.user.ID" />
+                        <input type="hidden" name="userEditID" value="@user.ID" />
+                        <input class="btn btn-warning pull-right" type="submit" value="Editar" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+<div class="row" style="margin-top:50px">
+    <p>Adicione o seus usuários na forma descrita : colunas na seguinte ordem: login, senha, nome, email</p>
+    <form action="@Url.Content("~/CMS/AddUsers")">
+        <textarea type="text" name="csv" class="form-control col-xs-12" style="min-height:250px;max-width: unset;"></textarea>
+        <input type="hidden" name="userID" value="@Model.autorization.user.ID" />
+        <input class="btn btn-primary" style="margin-top:10px" type="submit" value="Adicionar usuários" />
+    </form>
+</div>
+
+
+@Html.Partial("Base", Model.autorization)

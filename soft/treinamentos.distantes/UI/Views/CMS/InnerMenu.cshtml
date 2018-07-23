@@ -1,0 +1,24 @@
+﻿@model UI.ViewModels.Autentication
+@{
+    ViewBag.Title = "InnerMenu";
+}
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="@Url.Content("~/CMS/Dashboard?userID=" + Model.user.ID)">Painel de Aulas</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a class="" href="@Url.Content("~/CMS/LoadCreatePostPage?userID="+Model.user.ID)">Criar postagem</a></li>
+                <li><a class="" href="@Url.Content("~/CMS/CreateAdmUserLoadPage?userID="+Model.user.ID)">Adm. Professores</a></li>
+                <li><a class="" href="@Url.Content("~/CMS/NotAdmUserLoadPage?userID="+Model.user.ID)">Adm. Alunos</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

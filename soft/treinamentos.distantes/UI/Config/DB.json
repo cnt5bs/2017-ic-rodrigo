@@ -1,0 +1,4 @@
+﻿{
+  "ConnectionUrl": "mongodb://localhost:27017/CMS_Orientacao",
+  "ConnectionIA": "mongodb://localhost:27017/Machine"
+}

@@ -1,0 +1,40 @@
+﻿@model UI.ViewModels.DashboardVM
+@{
+    ViewBag.Title = "Mural";
+}
+
+<div class="col-xs-12" style="height:80px">
+
+</div>
+
+@Html.Partial("SidebarMenu", new UI.ViewModels.SideBarHeaderVM() { posts = Model.autorization.user.posts.Where(u => u.active == true).OrderByDescending(u => u.ordem).ToList(), autorization = Model.autorization })
+
+@foreach (var post in Model.autorization.user.posts.Where(u => u.active == true).OrderByDescending(u => u.ordem))
+{
+
+    <div class="row" style="margin-top:45px">
+        
+
+
+        <div class="col-sm-6 col-xs-12" style="margin-left:24.444444%">
+            <div class="card text-center" style="padding:40px;width:100%!important;cursor:pointer">
+
+                <div class="container text-center">
+                    <h5 class="card-title">@post.nome</h5>
+                    <p><bold>@post.subtitulo</bold></p>
+                    <p class="card-text">@post.descricao</p>
+                    <a href="@Url.Content("~/Home/LoadPostPage?userID="+Model.autorization.user.ID+"&postID="+post.ID)" class="btn btn-primary pull-right">Ver postagem &raquo;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<script>
+    @if (ViewBag.RecordLogin == "S")
+    {
+        <text> window.sessionStorage.setItem('userID', '@Model.autorization.user.ID'); </text>
+    }
+</script>
+
+@Html.Partial("Base", Model.autorization)

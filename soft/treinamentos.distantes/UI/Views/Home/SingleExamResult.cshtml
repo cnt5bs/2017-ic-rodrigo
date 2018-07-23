@@ -1,0 +1,90 @@
+﻿@model UI.ViewModels.SingleExamAnalyticsVM
+@{
+    ViewBag.Title = "SingleExamResult";
+}
+
+<h2>SingleExamResult</h2>
+
+<canvas id="myresult" width="400" height="100"></canvas>
+<script>
+    var ctx = document.getElementById("myresult").getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: [
+                @foreach (var interest in Model.respostas.Select((post, i) => new { i, post }))
+                {
+                    if (interest.i == 0)
+                    {
+                        <text>'@interest.post.Key.nome'</text>
+                    }
+                    else
+                    {
+                        <text>, '@interest.post.Key.nome'</text>
+                    }
+
+                }
+            ],
+            datasets: [{
+                    label: 'Minhas notas',
+                    data: [
+                         @foreach (var interest in Model.respostas.Select((post, i) => new { i, post }))
+                            {
+                                if (interest.i == 0)
+                                {
+                                    <text>'@interest.post.Value'</text>
+                                }
+                                else
+                                {
+                                    <text>, '@interest.post.Value'</text>
+                                }
+
+                            }
+                    ],
+                backgroundColor: [
+                   @foreach (var interest in Model.respostas.Select((post, i) => new { i, post }))
+                    {
+                           if (interest.i == 0)
+                        {
+                            <text>'rgba(255, 99, 132, 0.2)'</text>
+                        }
+                        else
+                        {
+                            <text>, 'rgba(255, 99, 132, 0.2)'</text>
+                        }
+
+                    }
+
+                ],
+                borderColor: [
+
+                    @foreach (var interest in Model.respostas.Select((post, i) => new { i, post }))
+                    {
+                           if (interest.i == 0)
+                        {
+                            <text>'rgba(255,99,132,1)'</text>
+                        }
+                        else
+                        {
+                            <text>, 'rgba(255,99,132,1)'</text>
+                        }
+
+                    }
+
+
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+</script>
+@Html.Partial("Base", Model.autorization)

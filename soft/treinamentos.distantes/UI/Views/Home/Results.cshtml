@@ -1,0 +1,212 @@
+﻿@model UI.ViewModels.AnalyticsVM
+@{
+    ViewBag.Title = "Results";
+}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+
+@Html.Partial("SidebarMenu", new UI.ViewModels.SideBarHeaderVM() { posts = Model.autorization.user.posts.Where(u => u.active == true).OrderByDescending(u => u.ordem).ToList(), autorization = Model.autorization })
+
+<h2>Análise - Meus Resultados</h2>
+<!--"Red", "Blue", "Yellow", "Green", "Purple",
+    
+    
+    'rgba(255, 99, 132, 0.2),
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+
+
+
+
+    'rgba(255,99,132,1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+    
+    -->
+<canvas id="myresult" width="400" height="100"></canvas>
+<script>
+    var ctx = document.getElementById("myresult").getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: [
+                @foreach (var interest in Model.post_nota.Select((post, i) => new { i, post }))
+                {
+                    if (interest.i == 0)
+                    {
+                        <text>'@interest.post.Key.nome'</text>
+                    }
+                    else
+                    {
+                        <text>, '@interest.post.Key.nome'</text>
+                    }
+
+                }
+            ],
+            datasets: [{
+                    label: 'Minhas notas',
+                    data: [
+                         @foreach (var interest in Model.post_nota.Select((post, i) => new { i, post }))
+                            {
+                                if (interest.i == 0)
+                                {
+                                    <text>'@interest.post.Value'</text>
+                                }
+                                else
+                                {
+                                    <text>, '@interest.post.Value'</text>
+                                }
+
+                            }
+                    ],
+                backgroundColor: [
+                   @foreach (var interest in Model.post_nota.Select((post, i) => new { i, post }))
+                    {
+                           if (interest.i == 0)
+                        {
+                            <text>'rgba(255, 99, 132, 0.2)'</text>
+                        }
+                        else
+                        {
+                            <text>, 'rgba(255, 99, 132, 0.2)'</text>
+                        }
+
+                    }
+
+                ],
+                borderColor: [
+
+                    @foreach (var interest in Model.post_nota.Select((post, i) => new { i, post }))
+                    {
+                           if (interest.i == 0)
+                        {
+                            <text>'rgba(255,99,132,1)'</text>
+                        }
+                        else
+                        {
+                            <text>, 'rgba(255,99,132,1)'</text>
+                        }
+
+                    }
+
+
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+</script>
+
+<canvas id="expected" width="400" height="100"></canvas>
+<script>
+    var ctx = document.getElementById("expected").getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: [
+                @foreach (var interest in Model.post_esperada.Select((post, i) => new { i, post }))
+                {
+                    if (interest.i == 0)
+                    {
+                        <text>'@interest.post.Key.nome'</text>
+                    }
+                    else
+                    {
+                        <text>, '@interest.post.Key.nome'</text>
+                    }
+
+                }
+            ],
+            datasets: [{
+                    label: 'Notas esperadas',
+                    data: [
+                         @foreach (var interest in Model.post_esperada.Select((post, i) => new { i, post }))
+                            {
+                                if (interest.i == 0)
+                                {
+                                    <text>'@interest.post.Value'</text>
+                                }
+                                else
+                                {
+                                    <text>, '@interest.post.Value'</text>
+                                }
+
+                            }
+                    ],
+                backgroundColor: [
+                   @foreach (var interest in Model.post_esperada.Select((post, i) => new { i, post }))
+                    {
+                           if (interest.i == 0)
+                        {
+                            <text>'rgba(255, 99, 132, 0.2)'</text>
+                        }
+                        else
+                        {
+                            <text>, 'rgba(255, 99, 132, 0.2)'</text>
+                        }
+
+                    }
+
+                ],
+                borderColor: [
+
+                    @foreach (var interest in Model.post_esperada.Select((post, i) => new { i, post }))
+                    {
+                           if (interest.i == 0)
+                        {
+                            <text>'rgba(255,99,132,1)'</text>
+                        }
+                        else
+                        {
+                            <text>, 'rgba(255,99,132,1)'</text>
+                        }
+
+                    }
+
+
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+</script>
+
+
+<div class="row">
+    <div class="col-xs-12">
+        <p>
+            Vocë obteve resultados ruins nestas atividades acadëmicas (clique para conhecer atividades acadêmicas que irão lhe ajudar a melhorar nestas matérias):
+        </p>
+        @foreach (var interest in Model.badResultsPosts)
+        {
+           <span style="font-size:30px;cursor:pointer"><a href="@Url.Content("~/Home/ChooseHelpInterestsLoadPage?userID="+Model.autorization.user.ID + "&postID="+interest.ID)" class="btn btn-default">@interest.nome</a></span>
+        }
+    </div>
+
+</div>
+
+@Html.Partial("Base", Model.autorization)
