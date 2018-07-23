@@ -1,0 +1,224 @@
+= Projeto Tutor de Estudos INEP: Relatório Final - Rodrigo Nogueira
+
+:toc:
+:toc-title: Sumário
+:figure-caption: Figura
+:sectnums:
+
+////
+2018/03/09: revisado por italo
+////
+
+////
+https://github.com/cnt5bs/2017-ic-rodrigo
+////
+
+== Introdução
+
+O trabalho de um aluno em uma instituição acadêmica pode ser avaliada de várias maneiras, uma das mais complicadas é utilizar o histórico de alunos para determinar se a performance de alguém foi satisfatória, e isso se dá porque é difícil criar os padrões de alunos conforme suas propriedades.
+
+A pesquisa busca metodologias de avaliação do aluno utilizando técnicas de inteligência artificial e aprendizado de máquina para com estas ajudar na experiência e resultados de estudos dos alunos de instituições acadêmicas.
+Foram selecionadas propriedades (de um aluno) para serem consideradas na criação dos padrões de alunos e suas respectivas provas e avaliações.
+
+Primeiramente é feita a avaliação entregue pelo professor, a prova criada pelo professor. Após a avaliação do professor é feita a avaliação da máquina para determinar se o resultado que era esperado do aluno foi satisfatório ou não.
+
+Para auxiliar na elaboração de prova e na avaliação da prova foi estudado o sistema de criação e avaliação de provas para o ensino superior do INEP (ENADE).
+
+//INEP
+Instituto que aplica o Exame referência no Brasil de avaliação de Instituições de Educação de ensino Superior. 
+O Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira (INEP) é o orgão responsável pela elaboração e subsidiação do exame ENADE.
+O Instituto faz pesquisas e levantamentos neste ramo do ensino. 
+
+Análisar o ENADE é de interesse da pesquisa pois podemos o utilizar como inspiração para elaboração de critérios e levantamento do modelo das entidades da pesquisa. 
+
+
+O ENADE do ensino superior (Sistema Nacional de Avaliação da Educação Superior - Sinaes) tem como objetivo assegurar que o processo de avaliação das Instituições de Educação Superior (IES) ocorram de acordo com requisitos mínimos de aprendizagem, estabelecidos pelo MEC.
+O que beneficia o aluno no sentido de ter garantido suas condições de avaliação.
+
+A pesquisa, considera, como referência, os critérios e as respostas elaboradas pelo exame do INEP para o ensino superior (Sinaes), Enade (Exame Nacional de Desempenho de Estudantes).
+Este exame visa avaliar a qualidade da educação oferecida pelas IES. 
+
+Para a pesquisa, foram determinadas as metodologias de criação de avaliações do ENADE como base para criação das perguntas e alternativas dentro da plataforma da pesquisa. Estas são: Somente suportadas as criações de questionários com perguntas textuais (somente escritas, não possuem imagens) de resposta única, e com alternativas textuais.
+
+Feito o estudo das metodologias do ENADE, para aplicação da prova foram elaborados os seguintes modelos de domínio :
+
+
+{counter2:nfig}
+[[fig:diag-mcq, Fig {counter:nfig}]]
+_Figura {nfig}. Diagrama do modelo de estudante._ +
+image:fig/ModeloUsuarioIC.png[] +
+Fonte: elaborado pelo autor
+
+{counter2:nfig}
+[[fig:diag-mcq, Fig {counter:nfig}]]
+_Figura {nfig}. Diagrama do modelo dequestionários._ +
+image:fig/QuestionariosModeloIC.png[] +
+Fonte: elaborado pelo autor
+
+{counter2:nfig}
+[[fig:diag-mcq, Fig {counter:nfig}]]
+_Figura {nfig}. Diagrama do modelo de domínio dos MCQs._ +
+image:fig/ModeloMCQIC.png[] +
+Fonte: elaborado pelo autor
+
+
+Para auxiliar nos tópicos citados, elaboração da prova, fluxo e experiência de ensino de um aluno, utilizando das metodologias estudadas, foi criada uma plataforma de auxilio ao ensino em que o professor constrói a sua aula, e a experiência do aluno (ordenando e definindo o conteúdo de cada página que ele verá), escreve sobre o conteúdo que deseja, monta provas, e os alunos são avaliados e auxiliados pela plataforma.
+
+É uma plataforma de ensino que auxilia o aluno em seus estudos avaliando, por meio de aprendizado de máquina, se o resultado foi o esperado para aquele perfil de aluno. Caso não sejam os resultados esperados, e o aluno tiver ido pior do que o esperado em alguma matéria, a plataforma de ensino recomenda ao aluno estudar outras matérias relacionadas para melhorar sua base conceitual.
+
+O professor que utiliza a plataforma para montar as suas matéria possui um gerenciador de conteúdo que o permite montar uma sequência de slides da sua matéria, colocar vídeos, mais slides, criar páginas explicativas, escrever o conteúdo de sua matéria, organizar por tópicos, montar suas provas, determinar, mudar ou editar a ordem das páginas.
+Para cada prova que o aluno faz, ele ganha uma pontuação no sistema, pontuação que ele poderá ver em uma página de "Análise dos dados", ao lado de uma análise de como o sistema esperava que ele fosse, e suas sugestões de matéria quando sua nota for menor do que a esperada.
+
+As matérias relacionadas, que podem melhorar a base conceitual de um aluno, são definidas pelo próprio professor que cria a experiência de estudo da matéria em seu gerenciador de conteúdo. Assim as matérias recomendadas a um aluno que não conseguiu atingir o resultado esperado é uma recomendação do professor.
+
+Utilizando desta plataforma, o aluno poderá ser avaliado conforme seu professor deseja, e com base no resultado de outras avaliações de outros alunos e a análise de suas propriedades, o sistema pode retirar padrões de alunos para dizer o que se era esperado de um aluno em alguma situação.
+
+Com isso foram desenhadas estas telas como esboço de uam experiência simples de um aluno :
+
+{counter2:nfig}
+[[fig:diag-tela1, Fig {counter:nfig}]]
+_Figura {nfig}. Tela de montagem dos tópicos a serem estudados do aluno._ +
+image:fig/Tela1.png[] +
+Fonte: elaborado pelo autor
+
+{counter2:nfig}
+[[fig:diag-tela2, Fig {counter:nfig}]]
+_Figura {nfig}. Tela de questionário inicial do aluno._ +
+image:fig/Tela2.png[] +
+Fonte: elaborado pelo autor
+
+{counter2:nfig}
+[[fig:diag-tela3, Fig {counter:nfig}]]
+_Figura {nfig}. Tela de mural do aluno._ +
+image:fig/Tela3.png[] +
+Fonte: elaborado pelo autor
+
+{counter2:nfig}
+[[fig:diag-tela4, Fig {counter:nfig}]]
+_Figura {nfig}. Tela de resultados do aluno._ +
+image:fig/Tela4.png[] +
+Fonte: elaborado pelo autor
+
+Como a plataforma foi implementada com sucesso, foram elaboradas estas telas em Html para serem utilizadas na Web.
+
+Com o intuito de fazer integrações com outros sistemas, foi construído um serviço Web que recebe questionários, em "JSON" (Javascript Object Notation). Assim, os questionários podem ser elaborados e validados em outro software. Assim podem ser inseridos na plataforma da pesquisa via internet e utilizados para avaliar os alunos como se tivessem sido desenvolvidos internamente.
+
+== Metodologia
+
+=== Pesquisa
+
+*Modelos*:
+
+Para a elaboração de um modelo de domínio foi importante a definição de várias entidades que existiram durante o estudo das metodologias do ENADE. Além das entidades provenientes da pesquisa feita sobre as metodologias do ENADE, houve a necessidade de elaborar vários modelos definindo a montagem da experiência dos usuários. Foi definido também os tipos de entidades de usuário que influenciam a pesquisa.
+Foram definidos duas entidades principais de usuários, a entidade de professor e a entidade de aluno.
+Estas duas entidades tem dois tipos tipos de experiência diferentes dentro da plataforma desenvolvida.
+Somente a entidade de usuário aluno é submetida a avaliação e a definição de padrões de perfil de alunos e a sugestões definidas pelos usuários de tipo professor.
+Foram definidos também alguns modelos de tipo de questão e tipos de questionários. Modelos de questões e respostas foram elaborados conforme as limitações das elaborações de questões do ENADE, com a limitação de não poderem ser aceitas questões com imagens e vídeos, somente aceitas questões textuais.
+Elaborados os modelos de domínio, para se ter a experiência de um usuário na plataforma da pesquisa, foi realizado o desenho de várias telas, e planos de navegação dos tipos de usuário. Os planos de navegação dentro da plataforma passaram por um processo de refinamento por conta da experiência visual do usuário aluno, a plataforma deveria ser intuitiva e de fácil utilização, principalmente por parte do aluno.
+
+*Aprendizado de máquina*:
+
+O aprendizado de máquina implementado na solução utiliza das propriedades estipuladas no modelo de domínio de usuário, das propriedades estipuladas no modelo de domínio de questionários e o modelo de domínio de questões.
+O que ocorre é uma combinação de todas as propriedades do aluno com todas as propriedades da questão que foi respondida, e que possui um endereçamento para o seu respectivo questionário.
+Ao possuir as combinações de propriedades dos alunos com as propriedades das questões respondidas, para um determinado questionário, é possível construir uma probabilidade que cada propriedade de aluno aponta de uma alternativa a ser escolhida. Assim cada propriedade vai determinar uma probabilidade de o aluno com aquela propriedade responder cada tipo de alternativa disponível para aquele questionário.
+Assim o aprendizado de máquina trabalha com uma tabela como esta, para uma questão de quatro alternativas que são "Rodrigo", "Bruno", "Gabriel", e "Victor", cujo a pergunta é "Qual o seu nome ?" em que o aluno possuí por exemplo definidas as propriedades idade, cidade:
+
+
+|===
+| Questão : | Qual o seu nome ?
+|===
+|===
+| Alternativas | Rodrigo | Bruno | Gabriel | Victor
+| Idade: 21 | 27% | 12% | 32% | 29%
+| Cidade: São Paulo | 12%| 27%  | 32% | 29%
+|===
+
+Feito isso, para este determinado aluno, de idade vinte e um anos e da cidade São Paulo, o aprendizado de máquina tem que ter uma inteligência para determinar, dentro de um conjunto de probabilidades para cada alternativa possível, qual será provavelmente a respondida. Para isto, é feita a soma de cada uma das probabilidades de cada uma das alternativas, e teríamos para este mesmo aluno, uma os seguintes pesos para resposta de cada alternativa de acordo com as propriedades deste aluno:
+
+|===
+| Questão : | Qual o seu nome ?
+|===
+|===
+| Alternativas | Rodrigo | Bruno | Gabriel | Victor
+| Pesos | 39 | 39 | 64 | 58
+|===
+
+Feito isso, a inteligëncia concluí que, para este aluno, com idade 21 e cidade de São Paulo em suas propriedades, e levando somente elas em consideração, a provavel resposta do aluno deve ser "Gabriel". Isto não significa que a resposta é a correta, significa que, conforme o que foi aprendido com outros alunos, esta é a resposta esperada pela máquina.
+
+=== Produção do software
+
+*Tecnologias*:
+Modelo de domínio -- 
+
+== Consideração Final
+
+Os livros lidos para o entendimento do assunto foram acertos no desenvolvimento da pesquisa, pela forma que tratavam o paradigma que estamos estudando (orientação a objetos).
+
+Inicialmente seria utilizado o sistema online do INEP para consulta do Guia de Elaboração e Revisão de Itens do INEP, documento que foi retirado da plataforma online do INEP.
+Foi pensado então, procurar nas plataformas online de suas provas aplicadas por um documento que correspondesse ao Guia de Elaboração e Revisão de Itens do INEP.
+Foi encontrado Guia de Elaboração e Revisão de Itens do INEP no site da "Provinha da Brasil". 
+
+O mais importante do modelo elaborado sobre a estrutura da pesquisa, é, identificar o tipo de usuário por trás de cada informação, com a maior precisão possível.
+O quanto mais próxima a pesquisa estiver de um padrão estatístico de resultados por categorização de estudante, mais precisa estará nossa identificação de padrão de usuário.
+Esta documentação deve ser criteriosamente armazenada levando em consideração a situação acadêmica, profissional e histórico acadêmico. 
+//FEITO italo: qual a relação disso com o objetivo (resultado a ser alcançado) desta pesquisa? por exemplo: como se relaciona situação geográfica com o aprendizado de um aluno?
+Estes criterios são utilizados pelo software no aprendizado de máquina que trará para os padrões de usuário, diferentes tipos de fluxos de estudo. 
+Definindo padrões de comportamento, o software poderá criar fluxos recomendados para cada um deles.
+Fluxos que serão construídos conforme os erros e acertos em cada tópico que o aluno estudou.
+Assim a pesquisa pode estabelecer uma relação entre o contexto do estudante e o que ele esta errando, para que software o oriente melhor a cada questionário respondido.
+
+A meta do estudante que está participando do projeto é melhorar seu estudo e suas metodologias de estudo. 
+//FEITO: italo: frase mal formada
+
+Os requisitos devem ser modelados tendo como inspiração requistos do INEP e a elaboração do modelo. Isto foi feito.
+A arquitetura foi pensada com base no modelo arquitetural e os requisitos estão sendo atendidos, principalmente, no modelo de implementação, que está em andamento.
+
+O mais importante para a pesquisa a partir desta data, é terminar o modelo de implementação e a partir da arquitetura começarmos a codificação do software. A fase de testes acabará enxuta por conta de automatização de testes prevista na arqutietura.
+//FEITO: italo: o que quer dizer "requisitos levantados posteriormente"? quando isso irá acontecer?
+
+O próximo passo, após o modelo de implementação do sistema, é a codificação. O modelo de implementação está na etapa de estabelecimento das funções de cada objeto, e como serão gerenciadas as tarefas.
+A implementação terá como foco trabalho de programação, criação de banco de dados do software e configuração de ambiente e de servidores.
+
+O tempo restante é suficiente para a conclusão do projeto pois os tópicos mais difíceis foram solucionados, o modelo de estudante, e como levantar este modelo. 
+O sistema, terá, como um dos requisitos mais importantes, um processo de elaboração de questionários para alunos, tendo ordenação de perguntas mais importantes para o padrão que o aluno se encaixa. Envolve análise de permutações de alunos e suas respectivas respostas, e decisões de fluxos construídos pelo próprio software.
+Modelos estatísticos para padronização dos resultados e a forma de elaborar um fluxograma que efetivamente auxilie o estudante.
+
+Enquanto requisito de trazer uma plataforma para responder perguntas é simples, pois somente envolve interface de usuário e gravação de suas respostas em um banco de dados.
+
+//FEITO: italo: e quanto aos requisitos funcionais? quais são eles? quais são de maior complexidade? e os mais simples?
+O modelo arquitetural utiliza dos conceitos de "Domain Driven Design" (Desenho dirigido ao domínio), assim nosso modelo e restrições serão intensamente implementadas via arquitetura. 
+O modelo de entidades se tornou complexo, os dados de uma propriedade de usuário deverá ser permutado com outras propriedades de outros usuários que responderam perguntas do mesmo tópico, este exemplo explica a escolha do "DDD" para a arquitetura do projeto.
+//FEITO: italo: como saber se DDD será apropriado para resolver os requisitos do projeto?
+A modularização da aplicação esta sendo feita no modelo arquitetural.
+Terminado o modelo de implementação, será iniciada a implementação.
+
+Já está sendo feito o modelo de implementação.
+
+A decisão arquitetural acabou mais complexo do que se esperava.
+Tendo em vista partir para o código fonte, e criação do modelo de implementação tomará menos tempo do que o esperado, pois o trabalho arquitetural adiantou conceitos como o de divisão de atividades.
+O tempo de verificação e validação será reduzido por utilizarmos uma camada de testes unitários na arquitetura da solução.
+Camada que otimizará nossos testes e validações.
+Também o tempo de correção de erros e _bugs_ encontrados, encaixadas na atividade de "código fonte" será reduzido. 
+//FEITO: italo: evite o uso de superlativos em textos técnicos, como "drasticamente". 
+
+Com estas revisões, a pesquisa pode ser concluída nos próximos 6 (seis) meses.
+Nos próximos 6 (seis) meses será feita a codificação, os testes e a validação do sistema, e o Registro do trabalho de pesquisa.
+//FEITO: italo: temos mais "6 meses" pela frente!
+
+== Bibliografia:
+
+
+- http://download.inep.gov.br/educacao_basica/provinha_brasil/documentos/2012/guia_elaboracao_itens_provinha_brasil.pdf[Provinha Brasil]
++
+- https://impa.br/wp-content/uploads/2016/12/helio_f_costa.pdf[Mestrado sobre produção de itens]
++
+- http://www.uel.br/grupo-estudo/gepema/Disserta%E7%F5es/2014_disserta%E7%E3o_Ademir.pdf[Mestrado sobre enunciados de itens]
++
+- http://www.publicadireito.com.br/artigos/?cod=480167897cc43b2f[Bloom nas avaliações discentes]
++
+- http://www.portalavaliacao.caedufjf.net/wp-content/uploads/2012/02/Guia_De_-Elaboração_De_Itens_LP.pdf[Guia de elaboração de itens]
++
+- http://www.adventista.edu.br/_imagens/area_academica/files/guia-de-elaboracao-de-itens-120804112623-phpapp01(3).pdf[Guia para questões de múltipla escolha]
++
+- http://www.athenaseducacional.com.br/media/files/135/135_87.pdf[Guia de elaboração de itens]
++
