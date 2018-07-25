@@ -147,63 +147,89 @@ Feito isso, a inteligëncia concluí que, para este aluno, com idade 21 e cidade
 
 === Produção do software
 
-*Tecnologias*:
-Modelo de domínio -- 
+Após a definição dos modelos de domínio, do levantamento dos requisitos, e do desenho detalhado das telas do usuário aluno, o desenvolvimento foi iniciado com o objetivo de atingir o resultado final por inteiro.
 
-== Consideração Final
+Foi utilizado o Domain Driven Design para arquitetar a solução e com base nas decisões de modelagem criadas a partir do paradigma de orientação a objeto, foram revisadas as tecnologias que seriam utilizadas no projeto, o foco para as escolhas das tecnologias foi em tornar o desenvolvimento didático, e tornar simples a manutenção futura da solução.
 
-Os livros lidos para o entendimento do assunto foram acertos no desenvolvimento da pesquisa, pela forma que tratavam o paradigma que estamos estudando (orientação a objetos).
+Tecnologias utilizadas:
 
-Inicialmente seria utilizado o sistema online do INEP para consulta do Guia de Elaboração e Revisão de Itens do INEP, documento que foi retirado da plataforma online do INEP.
-Foi pensado então, procurar nas plataformas online de suas provas aplicadas por um documento que correspondesse ao Guia de Elaboração e Revisão de Itens do INEP.
-Foi encontrado Guia de Elaboração e Revisão de Itens do INEP no site da "Provinha da Brasil". 
+*MongoDB* para banco de dados, linguagem de programação *C#* da microsoft, utilizando o .Net Framework.
+O sistema operacional para rodar a aplicação tem que ser um Windows Server. O MongoDB pode ser colocado em uma máquina com sistema operacional Linux, porém deve ser corretamente apontado no arquivo de configuração presente na solução.
 
-O mais importante do modelo elaborado sobre a estrutura da pesquisa, é, identificar o tipo de usuário por trás de cada informação, com a maior precisão possível.
-O quanto mais próxima a pesquisa estiver de um padrão estatístico de resultados por categorização de estudante, mais precisa estará nossa identificação de padrão de usuário.
-Esta documentação deve ser criteriosamente armazenada levando em consideração a situação acadêmica, profissional e histórico acadêmico. 
-//FEITO italo: qual a relação disso com o objetivo (resultado a ser alcançado) desta pesquisa? por exemplo: como se relaciona situação geográfica com o aprendizado de um aluno?
-Estes criterios são utilizados pelo software no aprendizado de máquina que trará para os padrões de usuário, diferentes tipos de fluxos de estudo. 
-Definindo padrões de comportamento, o software poderá criar fluxos recomendados para cada um deles.
-Fluxos que serão construídos conforme os erros e acertos em cada tópico que o aluno estudou.
-Assim a pesquisa pode estabelecer uma relação entre o contexto do estudante e o que ele esta errando, para que software o oriente melhor a cada questionário respondido.
+A solução foi preparada para ser dinamicamente configurada. Foi construído um "Framework" para melhorar o desenvolvimento com utilizando o banco de dados *MongoDB*, este framework abstrai a configuração de conexão entre a aplicação e o banco de dados utilizando um arquivo que utiliza da notação de objetos javascript (*JSON*).
 
-A meta do estudante que está participando do projeto é melhorar seu estudo e suas metodologias de estudo. 
-//FEITO: italo: frase mal formada
+A arquitetura previu a criação de um componente, framework, para aprendizado de máquina, este foi nomeado de "PUC.Log.Learn". Este componente é referenciado dentro do software da plataforma e realiza os cálculos de probabilidades, pesos, permutação de propriedades de objetos e chega a conclusão dado um determinado número de ocorrências registradas. O componente possui duas funções principais, a de inserção de ocorrência, que possui nome em inglês *InsertMemory* (inserir memória em português), e a função de conclusão única, possui nome em inglês *GetUniqueConclusion* (obter conclusão única).
 
-Os requisitos devem ser modelados tendo como inspiração requistos do INEP e a elaboração do modelo. Isto foi feito.
-A arquitetura foi pensada com base no modelo arquitetural e os requisitos estão sendo atendidos, principalmente, no modelo de implementação, que está em andamento.
+Criado um componente para abstrair o aprendizado de máquina e outro para facilitar o desenvolvimento utilizando o banco de dados *MongoDB* foi necessária somente a implementação da análise feita das entidades e suas transições de estados.
 
-O mais importante para a pesquisa a partir desta data, é terminar o modelo de implementação e a partir da arquitetura começarmos a codificação do software. A fase de testes acabará enxuta por conta de automatização de testes prevista na arqutietura.
-//FEITO: italo: o que quer dizer "requisitos levantados posteriormente"? quando isso irá acontecer?
+A arquitetura seguiu o modelo M.V.V.C (modelos, visão, modelos de visão e controlador), criando também uma camada de operações de negócio chamada de *Service Layer* (camada de serviços em português) e uma camada de acesso a banco de dados chamada *ORM* (Object-Relational Mapping). É importante lembrar que o banco de dados é não relacional, porém o framework criado para facilitar a utilização do *MongoDB* abstrai as funções do banco de dados do código *C#*, e o desenvolvedor pode utilizar objetos *C#* relacionados entre si para definir a estrutura das coleções do banco de dados. Então para o desenvolvedor, os objetos são relacionados, para o banco as relações entre objetos são consideradas uma estrutura única de dados. Isto facilita operações que utilizam filtros e extração de dados do banco de dados, pois o resultado das buscas retornam na forma dos objetos que os descrevem e os filtros são feitos com base na estrutura dos objetos que descrevem as coleções do banco.
 
-O próximo passo, após o modelo de implementação do sistema, é a codificação. O modelo de implementação está na etapa de estabelecimento das funções de cada objeto, e como serão gerenciadas as tarefas.
-A implementação terá como foco trabalho de programação, criação de banco de dados do software e configuração de ambiente e de servidores.
+Foi elaborado um manual de como utilizar e como instalar a solução.
+//TODO: MANUAL
 
-O tempo restante é suficiente para a conclusão do projeto pois os tópicos mais difíceis foram solucionados, o modelo de estudante, e como levantar este modelo. 
-O sistema, terá, como um dos requisitos mais importantes, um processo de elaboração de questionários para alunos, tendo ordenação de perguntas mais importantes para o padrão que o aluno se encaixa. Envolve análise de permutações de alunos e suas respectivas respostas, e decisões de fluxos construídos pelo próprio software.
-Modelos estatísticos para padronização dos resultados e a forma de elaborar um fluxograma que efetivamente auxilie o estudante.
 
-Enquanto requisito de trazer uma plataforma para responder perguntas é simples, pois somente envolve interface de usuário e gravação de suas respostas em um banco de dados.
+== Resultado
 
-//FEITO: italo: e quanto aos requisitos funcionais? quais são eles? quais são de maior complexidade? e os mais simples?
-O modelo arquitetural utiliza dos conceitos de "Domain Driven Design" (Desenho dirigido ao domínio), assim nosso modelo e restrições serão intensamente implementadas via arquitetura. 
-O modelo de entidades se tornou complexo, os dados de uma propriedade de usuário deverá ser permutado com outras propriedades de outros usuários que responderam perguntas do mesmo tópico, este exemplo explica a escolha do "DDD" para a arquitetura do projeto.
-//FEITO: italo: como saber se DDD será apropriado para resolver os requisitos do projeto?
-A modularização da aplicação esta sendo feita no modelo arquitetural.
-Terminado o modelo de implementação, será iniciada a implementação.
+=== Pesquisa
+==== Restrições
+==== Modelos
+==== Experiência do usuário
 
-Já está sendo feito o modelo de implementação.
+=== Software
+==== Componentes
+==== Telas
+===== Aluno
+{counter2:nfig}
+[[fig:diag-tela4, Fig {counter:nfig}]]
+_Figura {nfig}. Tela de menu do aluno._ +
+image:fig/soft/SSMenu.PNG[] +
+Fonte: elaborado pelo autor
 
-A decisão arquitetural acabou mais complexo do que se esperava.
-Tendo em vista partir para o código fonte, e criação do modelo de implementação tomará menos tempo do que o esperado, pois o trabalho arquitetural adiantou conceitos como o de divisão de atividades.
-O tempo de verificação e validação será reduzido por utilizarmos uma camada de testes unitários na arquitetura da solução.
-Camada que otimizará nossos testes e validações.
-Também o tempo de correção de erros e _bugs_ encontrados, encaixadas na atividade de "código fonte" será reduzido. 
-//FEITO: italo: evite o uso de superlativos em textos técnicos, como "drasticamente". 
 
-Com estas revisões, a pesquisa pode ser concluída nos próximos 6 (seis) meses.
-Nos próximos 6 (seis) meses será feita a codificação, os testes e a validação do sistema, e o Registro do trabalho de pesquisa.
-//FEITO: italo: temos mais "6 meses" pela frente!
+{counter2:nfig}
+[[fig:diag-tela4, Fig {counter:nfig}]]
+_Figura {nfig}. Tela de resultados do aluno._ +
+image:fig/soft/SSMeusResultados.PNG[] +
+Fonte: elaborado pelo autor
+
+{counter2:nfig}
+[[fig:diag-tela4, Fig {counter:nfig}]]
+_Figura {nfig}. Tela de gerenciamento de interesses do aluno._ +
+image:fig/soft/SSInteresses.PNG[] +
+Fonte: elaborado pelo autor
+//TODO: TELA DE PROVA DO ALUNO
+//TODO: TELA DE SLIDES DO ALUNO
+
+===== Professor
+
+{counter2:nfig}
+[[fig:diag-tela4, Fig {counter:nfig}]]
+_Figura {nfig}. Painel de aulas programadas por um usuário professor._ +
+image:fig/soft/PainelDeAulas.PNG[] +
+Fonte: elaborado pelo autor
+
+{counter2:nfig}
+[[fig:diag-tela4, Fig {counter:nfig}]]
+_Figura {nfig}. Painel de Configuração de perguntas de um tópico programado pelo professor._ +
+image:fig/soft/EditarPerguntasExame.PNG[] +
+Fonte: elaborado pelo autor
+
+{counter2:nfig}
+[[fig:diag-tela4, Fig {counter:nfig}]]
+_Figura {nfig}. Painel de Configuração de páginas de orientações de um tópico programado pelo professor._ +
+image:fig/soft/AdmUX.PNG[] +
+Fonte: elaborado pelo autor
+
+
+==== Tutorial
+
+==== Como deve ser utilizado
+
+== Discussão
+
+=== Acertos
+=== Erros
+=== Conclusão
 
 == Bibliografia:
 
