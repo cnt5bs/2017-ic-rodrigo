@@ -40,6 +40,8 @@ Este exame visa avaliar a qualidade da educação oferecida pelas IES.
 
 Para a pesquisa, foram determinadas as metodologias de criação de avaliações do ENADE como base para criação das perguntas e alternativas dentro da plataforma da pesquisa. Estas são: Somente suportadas as criações de questionários com perguntas textuais (somente escritas, não possuem imagens) de resposta única, e com alternativas textuais.
 
+Foram estudadas as metodologias que o ENADE utiliza para a construção de perguntas, avaliação das respostas, construção de questionário, e análise de alternativas, e com isso foram desenhados modelos de domínio para representar as entidades que precisariam ser representadas.
+
 Feito o estudo das metodologias do ENADE, para aplicação da prova foram elaborados os seguintes modelos de domínio :
 
 
@@ -116,6 +118,14 @@ Somente a entidade de usuário aluno é submetida a avaliação e a definição 
 Foram definidos também alguns modelos de tipo de questão e tipos de questionários. Modelos de questões e respostas foram elaborados conforme as limitações das elaborações de questões do ENADE, com a limitação de não poderem ser aceitas questões com imagens e vídeos, somente aceitas questões textuais.
 Elaborados os modelos de domínio, para se ter a experiência de um usuário na plataforma da pesquisa, foi realizado o desenho de várias telas, e planos de navegação dos tipos de usuário. Os planos de navegação dentro da plataforma passaram por um processo de refinamento por conta da experiência visual do usuário aluno, a plataforma deveria ser intuitiva e de fácil utilização, principalmente por parte do aluno.
 
+Foi elaborado o seguinte modelo de questionário : 
+
+{counter2:nfig}
+[[fig:diag-tela4, Fig {counter:nfig}]]
+_Figura {nfig}. Tela de menu do aluno._ +
+image:fig/Questionarios.png[] +
+Fonte: elaborado pelo autor
+
 *Aprendizado de máquina*:
 
 O aprendizado de máquina implementado na solução utiliza das propriedades estipuladas no modelo de domínio de usuário, das propriedades estipuladas no modelo de domínio de questionários e o modelo de domínio de questões.
@@ -145,6 +155,14 @@ Feito isso, para este determinado aluno, de idade vinte e um anos e da cidade S�
 
 Feito isso, a inteligëncia concluí que, para este aluno, com idade 21 e cidade de São Paulo em suas propriedades, e levando somente elas em consideração, a provavel resposta do aluno deve ser "Gabriel". Isto não significa que a resposta é a correta, significa que, conforme o que foi aprendido com outros alunos, esta é a resposta esperada pela máquina.
 
+Modelo elaborado para representar a lógica do aprendizado de máquina : 
+
+{counter2:nfig}
+[[fig:diag-tela4, Fig {counter:nfig}]]
+_Figura {nfig}. Tela de menu do aluno._ +
+image:fig/Fluxo.png[] +
+Fonte: elaborado pelo autor
+
 === Produção do software
 
 Após a definição dos modelos de domínio, do levantamento dos requisitos, e do desenho detalhado das telas do usuário aluno, o desenvolvimento foi iniciado com o objetivo de atingir o resultado final por inteiro.
@@ -171,20 +189,66 @@ Foi elaborado um manual de como utilizar e como instalar a solução.
 == Resultado
 
 === Pesquisa
-==== Restrições
+
+A pesquisa ajuda alunos que desejam complementar os seus estudos por meio de questões elaboradas de acordo com as regras estabelecidas pelo INEP para os exames do ENADE. Dispondo de um retorno informativo a respeito das suas respostas, espera-se ajudar o estudante com orientações a respeito de temas que ainda precisam ser melhor compreendidos.
+A pesquisa tem como principal objetivo identificar as entidades de necessárias compreensões para estabelecer relacionamentos entre resultados esperados dos tipos de estudantes usuários da plataforma em seus estudos.
+Padrões de alunos foram encontrados durante a pesquisa. Padrões de alunos que são definidos a partir da permutação das propriedades do modelo de domínio do aluno, que seriam além de seu nome, endereço de correio eletrônico, a instituição aonde estuda e entre outros. Cruzando as propriedades de alunos que responderam as mesmas questões é possível encontrar padrões de relacionamento entre suas propriedades e respostas de cada pergunta que responderam. 
+
 ==== Modelos
+
+O objetivo refinar principal foi implementar um modelo de solução que ajudasse o aluno a desenvolver seus estudos sendo orientado por um algoritmo de aprendizado de máquina que chegue a conclusões sobre padrões de respostas de alunos para dizer o que era esperado do aluno e o que deve fazer para melhorar a performance de seu estudo.
+
+O primeiro desenvolvimento feito foi o de modelagem do domínio e definição das restrições de domínio, os modelos se demonstraram complexos pois cada uma das entidades precisava ser granularizada de forma a permitir a manipulação de estruturas de dados para análise combinatória.
+
+O desenvolvimento da experiência do aluno foi desenhada de forma a se tornar intuitiva e estabelecer a utilidade e as responsabilidades de cada tela. Além da utilidade de cada tela, podem ser definidas as estruturas de dados de cada tela e isso forma o modelo de visão. Feita a diferenciação da "visão", para o "modelo de visão" e o próprio "modelo" em termos de estruturas de dados, foi notado que a modelagem ideal para construir a experiência do aluno na plataforma seria o M.V.V.C (modelo, visão, modelo de visão e controlador).
+
+==== Restrições
+
+Foram pesquisadas as propriedades de um aluno comum, e descobertos vários padrões e combinações que estes alunos poderiam possuir. Notou-se que executar a tarefa de descobrir os padrões de alunos ou pré determiná-los pode tornar-se muito complexo, principalmente em casos de instituições de ensino internacionais aonde inúmeras características poderiam ser relevantes para a determinação dos padrões de alunos.
+
+Com esta conclusão, ficou claro que o componente de aprendizado de máquina deveria se encarregar da determinação de padrões de alunos. A máquina deve utilizar em suas considerações artefatos em um determinado escopo, determinado pelo próprio cliente do componente. Para isso, cada permutação trabalha com uma restrição de domínio e cada memória (ocorrência) inserida na máquina um ambiente correspondente. Assim, para chegar a conclusão, o resultado deve estar sempre dentro dos chamados "valores relevantes", informados pelo cliente do componente, e somente deve considerar permutação de objetos que foram gravados em determinado ambiente.
+
+Por exemplo, para chegar a conclusão de qual resposta é a mais provável para um determinado aluno, deve existir primeiro um ambiente correspondente a pergunta. Segundo, uma permutação das propriedades de um objeto de resposta com as propriedades de um objeto de aluno que respondeu a pergunta. Os valores relevantes são um conjunto de possíveis resultados, por exemplo: { "Alternativa 1", "Alternativa 2", "Alternativa 3", "Alternativa 4" } . Assim, estruturando também as combinações como uma coleção de pares chave e valor em um determinado ambiente, somente serão consideradas as combinações que possuem como valor algum dos valores relevantes determinados.
+
 ==== Experiência do usuário
+
+Com o andamento da pesquisa foi pensado em utilizar o aprendizado de máquina para a montagem de um grafo com ligações entre tópicos acadêmicos, aulas que o professor monta em sua plataforma. Assim o sistema poderia ligar matéria, tópicos, em que o aluno obteve resultados abaixo do esperado, e fazer recomendações de acordo com o grafo determinado.
+
+A tarefa de montagem da estrutura de relacionamento dos tópicos da plataforma deve ser do professor, a explicação para isto é trazer liberdade para o professor implementar a metodologia que desejar. Foram revisadas as metodologias de ensino aprendidas em cursos de licensciatura, foi constatado que a plataforma para definir uma ordem de tópicos precisaria implementar algum dos tipos de metodologias para funcionar corretamente, isto não é o objetivo da pesquisa, o objetivo da pesquisa não é facilitar o uso de uma determinada metodologiae.
+
+
+
+
 
 === Software
 ==== Componentes
 ==== Telas
 ===== Aluno
+
+
 {counter2:nfig}
 [[fig:diag-tela4, Fig {counter:nfig}]]
 _Figura {nfig}. Tela de menu do aluno._ +
 image:fig/soft/SSMenu.PNG[] +
 Fonte: elaborado pelo autor
 
+Esta foi a tela representada pelo desenho do menu do aluno (figura 6), ela foi retratada em Html para poder ser visualizada na internet. Possui um menu lateral com todos os tópicos que o aluno disse que tinha interesse (utilizando a tela de gerenciar interesses). No centro da tela são os tópicos que foram escolhidos pelo aluno, porém com a descrição, o título, o sub-título e um botão de redirecionamento para fazer a aula do tópico.
+
+{counter2:nfig}
+[[fig:diag-tela4, Fig {counter:nfig}]]
+_Figura {nfig}. Tela de aula._ +
+image:fig/soft/Aula.PNG[] +
+Fonte: elaborado pelo autor
+No exemplo, uma das telas que um determinado professor configurou foi esta, da imagem (figura 9). Ela faz parte da experiência criada pelo professor para os alunos que estão estudando o tópico. Nesta tela, mostra-se o título, o sub-título, e o texto da página. Além disto, também é mostrado o menu lateral com os tópicos escolhidos para o aluno, e um botão de prosseguir para a próxima etapa, também configurada pelo professor, que pode ser o questionário ou não.
+
+{counter2:nfig}
+[[fig:diag-tela4, Fig {counter:nfig}]]
+_Figura {nfig}. Tela de gerenciamento de interesses do aluno._ +
+image:fig/soft/SSInteresses.PNG[] +
+Fonte: elaborado pelo autor
+No exemplo, foram criados alguns tópicos com nomes não relacionados com nenhum tópico de estudo real e também não correlacionadas com nada da realidade. A tela descrita pela "figura 10" tem a função de permitir o aluno adicionar e remover seus tópicos de interesses dentro da plataforma. Os que já estão adicionados a sua conta possuem um botão para desvincular de sua conta, representado com um "X" na cor vermelha. Os tópicos que o aluno não marcou como interesses de seu perfil possuem um botão de adicionar azul, que possui a função de adicionar aos tópicos de interesse do aluno.
+
+Quando o aluno adquiri resultados abaixo do esperado, esta tela também é mostrada ao aluno, porém, no caso da "figura 10" esta sendo mostrado todos os tópicos cadastrados na plataforma, porém quando o aluno vai até a página por causa de um exame com nota abaixo do esperado, somente são mostrados os tópicos correlacionados (correlação feita pelo professor criador do tópico) aos tópicos que a performance não foi esperada.
 
 {counter2:nfig}
 [[fig:diag-tela4, Fig {counter:nfig}]]
@@ -192,13 +256,17 @@ _Figura {nfig}. Tela de resultados do aluno._ +
 image:fig/soft/SSMeusResultados.PNG[] +
 Fonte: elaborado pelo autor
 
+No exemplo da imagem, o aluno possui dois tópicos cadastrados, nos dois, o aluno já fez a avaliação craida pelo professor, cada uma possui três questões. A nota esperada pelo aprendizado de máquina nas duas avaliações seriam a máxima, o acerto das três questões. Porém, o aluno acertou duas na primeira prova, prova do tópico "Aulas OD", e acertou as esperadas três questões na avaliação do segundo tópico citado.
+
+Ao acertar um número abaixo do esperado na primeira avaliação criada pelo professor é habilitado um botão em baixo dos gráficos com o nome do tópico que o resultado esperado pelo aprendizado de máquina não foi atingido. O botão habilitado de baixo do gráfico redireciona o usuário para uma tela de gerenciamento de interesses, porém, somente são mostrados os tópicos que foram vinculados (pelo professor criador da matéria "Aulas OD") a matéria "Aulas OD".
+
 {counter2:nfig}
 [[fig:diag-tela4, Fig {counter:nfig}]]
-_Figura {nfig}. Tela de gerenciamento de interesses do aluno._ +
-image:fig/soft/SSInteresses.PNG[] +
+_Figura {nfig}. Tela de exame do aluno._ +
+image:fig/soft/Prova.PNG[] +
 Fonte: elaborado pelo autor
-//TODO: TELA DE PROVA DO ALUNO
-//TODO: TELA DE SLIDES DO ALUNO
+
+A tela da figura 12 é a tela de resposta de uma das perguntas do exame (a avaliação criada pelo professor criador do tópico) Aulas OD. Aonde o aluno escolhe somente uma das alternativas configuradas pelo professor. Assim que clica no botão verde escrito "Responder" a tela muda para a próxima pergunta.
 
 ===== Professor
 
@@ -208,11 +276,27 @@ _Figura {nfig}. Painel de aulas programadas por um usuário professor._ +
 image:fig/soft/PainelDeAulas.PNG[] +
 Fonte: elaborado pelo autor
 
+Painel de aulas do professor, esta tela serve como tela inicial, referência para o professor sobre os seus tópicos, assim ele pode escolher se deseja criar um tópico novo, editar um tópico já existente, editar o exame de um tópico já existente, editar o conteúdo dos tópicos, adicionar ou remover alunos, adicionar ou remover professores ou configurar a experiência de ensino de um tópico.
+
 {counter2:nfig}
 [[fig:diag-tela4, Fig {counter:nfig}]]
 _Figura {nfig}. Painel de Configuração de perguntas de um tópico programado pelo professor._ +
 image:fig/soft/EditarPerguntasExame.PNG[] +
 Fonte: elaborado pelo autor
+
+Painel de edição de perguntas de um exame que possui três perguntas, uma como o nome "Pergunta 1" outra com nome "Pergunta 2" e outra com o nome "Pergunta 3". clicando no nome destas perguntas, o professor é direcionado a uma tela de edição de alternativas.
+
+
+{counter2:nfig}
+[[fig:diag-tela4, Fig {counter:nfig}]]
+_Figura {nfig}. Painel de Configuração de perguntas de um tópico programado pelo professor._ +
+image:fig/soft/AdmOpcaoCorreta.PNG[] +
+Fonte: elaborado pelo autor
+
+A figura 15 se refere a o painel de edição de alternativas, que permite o professor a adicionar uma nova alternativa, remover, e escolher ela como correta ou incorreta. Ao remover uma alternativa, ela não é deletada, somente inativada. A alternativa deixa de aparecer para o aluno, mas por uma questão de registro de ocorrências, o professor sempre verá que alguma vez aquela alternativa foi criada, e foi inativada.
+
+Na criação da alternativa, o professor deve preencher dois campos, um nome de identificação da alternativa e a alternativa que será exposta ao aluno que fizer o exame. O nome de identificação não pode ser repetido em uma pergunta, o nome que será exposto é definido pelo professor. O nome de identificação é importante internamente para a identificação posterior das alternativas de cada pergunta, tanto dentro do banco de dados quanto para o próprio professor que está montando o exame.
+
 
 {counter2:nfig}
 [[fig:diag-tela4, Fig {counter:nfig}]]
@@ -220,6 +304,7 @@ _Figura {nfig}. Painel de Configuração de páginas de orientações de um tóp
 image:fig/soft/AdmUX.PNG[] +
 Fonte: elaborado pelo autor
 
+A figura 16 é o painel de configuração de páginas inicial de qualquer tópico criado e sem adição de nenhuma página personalizada pelo professor. Nesta tela o professor pode adicionar novas páginas, alterar a ordem que as páginas aparecerão para os alunos, remover páginas, e vincular páginas já existentes em outros tópicos. A ordenação das páginas é dada pelos números na coluna "ORDEM DA PÁGINA" na parte inferior da tela, aonde a maior das ordens é a primeira página, e a menor é a última. Caso as ordens sejam iguais, as páginas são ordenadas por ordem alfabética.
 
 ==== Tutorial
 
