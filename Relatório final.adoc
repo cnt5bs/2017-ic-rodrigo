@@ -13,11 +13,11 @@ A pesquisa busca metodologias de avaliação do aluno utilizando técnicas de in
 Foram selecionadas propriedades (de um aluno) para serem consideradas na criação dos padrões de alunos e suas respectivas provas e avaliações.
 
 //INEP
-Instituto que aplica o Exame referência no Brasil de avaliação de Instituições de Educação de ensino Superior. O Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira (INEP) é o orgão responsável pela elaboração e subsidiação do exame ENADE. O Instituto faz pesquisas e levantamentos neste ramo do ensino. Análisar o ENADE foi de interesse da pesquisa pois utilizamos como inspiração para elaboração de critérios e levantamento do modelo das entidades da pesquisa. Por exemplo, o formato das perguntas que serão levadas em consideração, perguntas, respostas, alterativas que são entidades da pesquisa.
+Instituto que aplica o Exame referência no Brasil de avaliação de Instituições de Educação de ensino Superior. O INEP (Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira) é o orgão responsável pela elaboração e subsidiação do exame ENADE (Exame Nacional de Desempenho de Estudantes). O Instituto faz pesquisas e levantamentos neste ramo do ensino. Analisar o ENADE foi de interesse da pesquisa pois foi utilizada como inspiração para elaboração de critérios e levantamento do modelo das entidades da pesquisa. Por exemplo, o formato das perguntas que serão levadas em consideração, perguntas, respostas, alterativas que são entidades da pesquisa.
 
-O ENADE do ensino superior (Sistema Nacional de Avaliação da Educação Superior - Sinaes) tem como objetivo assegurar que o processo de avaliação das Instituições de Educação Superior (IES) ocorram de acordo com requisitos mínimos de aprendizagem, estabelecidos pelo MEC. O que beneficia o aluno no sentido de ter garantido suas condições de avaliação.
+O SINAES (Sistema Nacional de Avaliação da Educação Superior), tem como objetivo assegurar que o processo de avaliação das Instituições de Educação Superior (IES) ocorram de acordo com requisitos mínimos de aprendizagem, estabelecidos pelo MEC. O que beneficia o aluno no sentido de ter garantido suas condições de avaliação.
 
-A pesquisa, considera, como referência, os critérios e as respostas elaboradas pelo exame do INEP para o ensino superior (Sinaes), Enade (Exame Nacional de Desempenho de Estudantes). Este exame visa avaliar a qualidade da educação oferecida pelas IES. A análise, na pesquisa, do aluno, acontecerá durante o estudo do aluno, trazendo a ele simulados, dicas, observações, e pontos positivos negativos de seu estudo, e com isso construindo um fluxo de estudo que o ajude no processo de estudo. 
+A pesquisa, considera, como referência, os critérios e as respostas elaboradas pelo exame do INEP para o ensino superior (Sinaes), Enade. Este exame visa avaliar a qualidade da educação oferecida pelas IES. A análise, na pesquisa, do aluno, acontecerá durante o estudo do aluno, trazendo a ele simulados, dicas, observações, e pontos positivos negativos de seu estudo, e com isso construindo um fluxo de estudo que o ajude no processo de estudo. 
 
 Para auxiliar na elaboração e na avaliação da prova foi estudado o sistema de criação e avaliação de provas para o ensino superior do INEP (ENADE).
 
@@ -236,7 +236,7 @@ _Figura {nfig}. Tela de menu do aluno._ +
 image:fig/Componentes.PNG[] +
 Fonte: elaborado pelo autor
 
-A figura 10 mostra um modelo de como é a composição da hierarquia dos componentes. O banco de dados esta presente em todos os projetos, e o framework de banco de dados é utilizado em todos os outros componentes, sendo uma camada de abstração de operações do próprio software de comunicação com o banco de dados utilizando *C#* disponibilizado pela empresa criadora do MongoDB (mongodriver).
+A figura {nfig} mostra um modelo de como é a composição da hierarquia dos componentes. O banco de dados esta presente em todos os projetos, e o framework de banco de dados é utilizado em todos os outros componentes, sendo uma camada de abstração de operações do próprio software de comunicação com o banco de dados utilizando *C#* disponibilizado pela empresa criadora do MongoDB (mongodriver).
 
 Por sua vez, o componente de machine learning está em constante comunicação com o componente de negócio.
 
@@ -259,23 +259,23 @@ _Figura {nfig}. Tela de menu do aluno._ +
 image:fig/soft/SSMenu.PNG[] +
 Fonte: elaborado pelo autor
 
-Esta foi a tela representada pelo desenho do menu do aluno (figura 6), ela foi retratada em Html para poder ser visualizada na internet. Possui um menu lateral com todos os tópicos que o aluno disse que tinha interesse (utilizando a tela de gerenciar interesses). No centro da tela são os tópicos que foram escolhidos pelo aluno, porém com a descrição, o título, o sub-título e um botão de redirecionamento para fazer a aula do tópico.
+Esta foi a tela representada pelo desenho do menu do aluno (figura {nfig}), ela foi retratada em Html para poder ser visualizada na internet. Possui um menu lateral com todos os tópicos que o aluno disse que tinha interesse (utilizando a tela de gerenciar interesses). No centro da tela são os tópicos que foram escolhidos pelo aluno, porém com a descrição, o título, o sub-título e um botão de redirecionamento para fazer a aula do tópico.
 
 {counter2:nfig}
 [[fig:diag-tela4, Fig {counter:nfig}]]
 _Figura {nfig}. Tela de aula._ +
 image:fig/soft/Aula.PNG[] +
 Fonte: elaborado pelo autor
-No exemplo, uma das telas que um determinado professor configurou foi esta, da imagem (figura 9). Ela faz parte da experiência criada pelo professor para os alunos que estão estudando o tópico. Nesta tela, mostra-se o título, o sub-título, e o texto da página. Além disto, também é mostrado o menu lateral com os tópicos escolhidos para o aluno, e um botão de prosseguir para a próxima etapa, também configurada pelo professor, que pode ser o questionário ou não.
+No exemplo, uma das telas que um determinado professor configurou foi esta, da imagem (figura {nfig}). Ela faz parte da experiência criada pelo professor para os alunos que estão estudando o tópico. Nesta tela, mostra-se o título, o sub-título, e o texto da página. Além disto, também é mostrado o menu lateral com os tópicos escolhidos para o aluno, e um botão de prosseguir para a próxima etapa, também configurada pelo professor, que pode ser o questionário ou não.
 
 {counter2:nfig}
 [[fig:diag-tela4, Fig {counter:nfig}]]
 _Figura {nfig}. Tela de gerenciamento de interesses do aluno._ +
 image:fig/soft/SSInteresses.PNG[] +
 Fonte: elaborado pelo autor
-No exemplo, foram criados alguns tópicos com nomes não relacionados com nenhum tópico de estudo real e também não correlacionadas com nada da realidade. A tela descrita pela "figura 10" tem a função de permitir o aluno adicionar e remover seus tópicos de interesses dentro da plataforma. Os que já estão adicionados a sua conta possuem um botão para desvincular de sua conta, representado com um "X" na cor vermelha. Os tópicos que o aluno não marcou como interesses de seu perfil possuem um botão de adicionar azul, que possui a função de adicionar aos tópicos de interesse do aluno.
+No exemplo, foram criados alguns tópicos com nomes não relacionados com nenhum tópico de estudo real e também não correlacionadas com nada da realidade. A tela descrita pela "figura {nfig}" tem a função de permitir o aluno adicionar e remover seus tópicos de interesses dentro da plataforma. Os que já estão adicionados a sua conta possuem um botão para desvincular de sua conta, representado com um "X" na cor vermelha. Os tópicos que o aluno não marcou como interesses de seu perfil possuem um botão de adicionar azul, que possui a função de adicionar aos tópicos de interesse do aluno.
 
-Quando o aluno adquiri resultados abaixo do esperado, esta tela também é mostrada ao aluno, porém, no caso da "figura 10" esta sendo mostrado todos os tópicos cadastrados na plataforma, porém quando o aluno vai até a página por causa de um exame com nota abaixo do esperado, somente são mostrados os tópicos correlacionados (correlação feita pelo professor criador do tópico) aos tópicos que a performance não foi esperada.
+Quando o aluno adquiri resultados abaixo do esperado, esta tela também é mostrada ao aluno, porém, no caso da "figura {nfig}" esta sendo mostrado todos os tópicos cadastrados na plataforma, porém quando o aluno vai até a página por causa de um exame com nota abaixo do esperado, somente são mostrados os tópicos correlacionados (correlação feita pelo professor criador do tópico) aos tópicos que a performance não foi esperada.
 
 {counter2:nfig}
 [[fig:diag-tela4, Fig {counter:nfig}]]
@@ -293,7 +293,7 @@ _Figura {nfig}. Tela de exame do aluno._ +
 image:fig/soft/Prova.PNG[] +
 Fonte: elaborado pelo autor
 
-A tela da figura 12 é a tela de resposta de uma das perguntas do exame (a avaliação criada pelo professor criador do tópico) Aulas OD. Aonde o aluno escolhe somente uma das alternativas configuradas pelo professor. Assim que clica no botão verde escrito "Responder" a tela muda para a próxima pergunta.
+A tela da figura {nfig} é a tela de resposta de uma das perguntas do exame (a avaliação criada pelo professor criador do tópico) Aulas OD. Aonde o aluno escolhe somente uma das alternativas configuradas pelo professor. Assim que clica no botão verde escrito "Responder" a tela muda para a próxima pergunta.
 
 ===== Professor
 
@@ -323,7 +323,7 @@ _Figura {nfig}. Painel de Configuração de perguntas de um tópico programado p
 image:fig/soft/AdmOpcaoCorreta.PNG[] +
 Fonte: elaborado pelo autor
 
-A figura 15 se refere a o painel de edição de alternativas, que permite o professor a adicionar uma nova alternativa, remover, e escolher ela como correta ou incorreta. Ao remover uma alternativa, ela não é deletada, somente inativada. A alternativa deixa de aparecer para o aluno, mas por uma questão de registro de ocorrências, o professor sempre verá que alguma vez aquela alternativa foi criada, e foi inativada.
+A figura {nfig} se refere a o painel de edição de alternativas, que permite o professor a adicionar uma nova alternativa, remover, e escolher ela como correta ou incorreta. Ao remover uma alternativa, ela não é deletada, somente inativada. A alternativa deixa de aparecer para o aluno, mas por uma questão de registro de ocorrências, o professor sempre verá que alguma vez aquela alternativa foi criada, e foi inativada.
 
 Na criação da alternativa, o professor deve preencher dois campos, um nome de identificação da alternativa e a alternativa que será exposta ao aluno que fizer o exame. O nome de identificação não pode ser repetido em uma pergunta, o nome que será exposto é definido pelo professor. O nome de identificação é importante internamente para a identificação posterior das alternativas de cada pergunta, tanto dentro do banco de dados quanto para o próprio professor que está montando o exame.
 
@@ -334,7 +334,7 @@ _Figura {nfig}. Painel de Configuração de páginas de orientações de um tóp
 image:fig/soft/AdmUX.PNG[] +
 Fonte: elaborado pelo autor
 
-A figura 16 é o painel de configuração de páginas inicial de qualquer tópico criado e sem adição de nenhuma página personalizada pelo professor. Nesta tela o professor pode adicionar novas páginas, alterar a ordem que as páginas aparecerão para os alunos, remover páginas, e vincular páginas já existentes em outros tópicos. A ordenação das páginas é dada pelos números na coluna "ORDEM DA PÁGINA" na parte inferior da tela, aonde a maior das ordens é a primeira página, e a menor é a última. Caso as ordens sejam iguais, as páginas são ordenadas por ordem alfabética.
+A figura {nfig} é o painel de configuração de páginas inicial de qualquer tópico criado e sem adição de nenhuma página personalizada pelo professor. Nesta tela o professor pode adicionar novas páginas, alterar a ordem que as páginas aparecerão para os alunos, remover páginas, e vincular páginas já existentes em outros tópicos. A ordenação das páginas é dada pelos números na coluna "ORDEM DA PÁGINA" na parte inferior da tela, aonde a maior das ordens é a primeira página, e a menor é a última. Caso as ordens sejam iguais, as páginas são ordenadas por ordem alfabética.
 
 <<<
 
