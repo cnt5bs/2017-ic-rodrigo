@@ -15,7 +15,7 @@ Foram selecionadas propriedades (de um aluno) para serem consideradas na criaç�
 //INEP
 Instituto que aplica o Exame referência no Brasil de avaliação de Instituições de Educação de ensino Superior. O INEP (Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira) é o orgão responsável pela elaboração e subsidiação do exame ENADE (Exame Nacional de Desempenho de Estudantes). O Instituto faz pesquisas e levantamentos neste ramo do ensino. Analisar o ENADE foi de interesse da pesquisa pois foi utilizada como inspiração para elaboração de critérios e levantamento do modelo das entidades da pesquisa. Por exemplo, o formato das perguntas que serão levadas em consideração, perguntas, respostas, alterativas que são entidades da pesquisa.
 
-O SINAES (Sistema Nacional de Avaliação da Educação Superior), tem como objetivo assegurar que o processo de avaliação das Instituições de Educação Superior (IES) ocorram de acordo com requisitos mínimos de aprendizagem, estabelecidos pelo MEC. O que beneficia o aluno no sentido de ter garantido suas condições de avaliação.
+O SINAES (Sistema Nacional de Avaliação da Educação Superior), tem como objetivo assegurar que o processo de avaliação das IES (Instituições de Educação Superior) ocorram de acordo com requisitos mínimos de aprendizagem, estabelecidos pelo MEC. O que beneficia o aluno no sentido de ter garantido suas condições de avaliação.
 
 A pesquisa, considera, como referência, os critérios e as respostas elaboradas pelo exame do INEP para o ensino superior (Sinaes), Enade. Este exame visa avaliar a qualidade da educação oferecida pelas IES. A análise, na pesquisa, do aluno, acontecerá durante o estudo do aluno, trazendo a ele simulados, dicas, observações, e pontos positivos negativos de seu estudo, e com isso construindo um fluxo de estudo que o ajude no processo de estudo. 
 
@@ -25,13 +25,13 @@ Para a pesquisa, foram determinadas as metodologias de criação de avaliações
 
 Foram estudadas as metodologias que o ENADE utiliza para a construção de perguntas, avaliação das respostas, construção de questionário, e análise de alternativas, e com isso foram desenhados modelos de domínio para representar as entidades que precisariam ser representadas.
 
-Para auxiliar nos tópicos de, elaboração da prova, fluxo e experiência de ensino de um aluno, utilizando das metodologias do INEP, foi criada uma plataforma de auxilio ao ensino em que o professor cria e edita a sua aula, e a experiência do aluno (ordenando e definindo o conteúdo de cada página que ele verá), escreve sobre o conteúdo que deseja, monta provas, e os alunos são avaliados e auxiliados pela plataforma.
+Para auxiliar nos tópicos de, elaboração da prova, fluxo e experiência de ensino de um aluno, utilizando das metodologias do INEP, foi criada uma plataforma de auxílio ao ensino em que o professor cria e edita a sua aula, e a experiência do aluno (ordenando e definindo o conteúdo de cada página que ele verá), escreve sobre o conteúdo que deseja, monta provas, e os alunos são avaliados e auxiliados pela plataforma.
 
 É uma plataforma de ensino que auxilia o aluno em seus estudos avaliando, por meio de aprendizado de máquina, se o resultado foi o esperado para aquele perfil de aluno. Caso não sejam os resultados esperados, e o aluno tiver ido pior do que o esperado em alguma matéria, a plataforma de ensino recomenda ao aluno estudar outras matérias relacionadas para melhorar sua base conceitual.
 
 Primeiramente é feita a avaliação criada pelo professor, a prova criada pelo professor. Após a avaliação do professor é feita a avaliação da máquina para determinar se o resultado que era esperado do aluno foi satisfatório ou não.
 
-O professor que utiliza a plataforma para montar as suas matéria possui um gerenciador de conteúdo que o permite montar uma sequência de slides da sua matéria, colocar vídeos, mais slides, criar páginas explicativas, escrever o conteúdo de sua matéria, organizar por tópicos, montar suas provas, determinar, mudar ou editar a ordem das páginas.
+O professor que utiliza a plataforma para montar as suas matérias possui um gerenciador de conteúdo que o permite montar uma sequência de slides da sua matéria, colocar vídeos, mais slides, criar páginas explicativas, escrever o conteúdo de sua matéria, organizar por tópicos, montar suas provas, determinar, mudar ou editar a ordem das páginas.
 Para cada prova que o aluno faz, ele ganha uma pontuação no sistema, pontuação que ele poderá ver em uma página de "Análise dos dados", ao lado de uma análise de como o sistema esperava que ele fosse, e suas sugestões de matéria quando sua nota for menor do que a esperada.
 
 As matérias relacionadas, que podem melhorar a base conceitual de um aluno, são definidas pelo próprio professor que cria a experiência de estudo da matéria em seu gerenciador de conteúdo. Assim as matérias recomendadas a um aluno que não conseguiu atingir o resultado esperado é uma recomendação do professor.
@@ -44,19 +44,19 @@ Com o intuito de fazer integrações com outros sistemas, foi construído um ser
 
 == Metodologia
 
-As metodologias utilizada foram divididas em três grandes grupos, metodologias para o trabalho de pesquisa, metodologias durante a produção do software e metodologias de controle de atividades. A metodologia do trabalho de pesquisa são as geradas pela base conceitual adquirida pelo trabalho de pesquisa, sobre o tema. As metodologias da produção do software são conclusões e decisões de modelagem técnicas que provém da base conceitual contruída. As metodologias de controle de atividade foram durante a pesquisa as responsáveis pela avaliação do andamento da pesquisa pelo próprio pesquisador.
+As metodologias utilizadas foram divididas em três grandes grupos, metodologias para o trabalho de pesquisa, metodologias durante a produção do software e metodologias de controle de atividades. As metodologias do trabalho de pesquisa são as geradas pela base conceitual adquirida pelo trabalho de pesquisa sobre o tema. As metodologias da produção do software são conclusões e decisões de modelagem técnicas que provém da base conceitual contruída. As metodologias de controle de atividade foram durante a pesquisa as responsáveis pela avaliação do andamento da pesquisa pelo próprio pesquisador.
 
 === Atividades
 
 A pesquisa começou em agosto de dois mil e dezessete, com encontros em todos os meses em diante até agosto de dois mil e dezoito. O orientador avaliava o andamento da pesquisa e trazia orientações para que não houvessem problemas até o fim da pesquisa.
 
-Foi feita durante as reuniões a gerência do projeto, e a análise dos riscos que poderiam levar a pesquisa a não atingir o sucesso, que seria a conclusão do projeto de pesquisa com um projeto de software funcional, resultado do trabalho de pesquisa.
+Foi feita durante as reuniões a gerência do projeto e análise dos riscos que poderiam levar a pesquisa a não atingir o sucesso, que seria a conclusão do projeto de pesquisa com um projeto de software funcional, resultado do trabalho de pesquisa.
 
-O tempo destinado ao estudo de técnologias e os modelos da solução que seria produzida foi extenso e necessário.
+O tempo destinado ao estudo de tecnologias e os modelos da solução que seria produzida foi extenso e necessário.
 
 *Revisão do cronograma*:
 
-Durante o desenvolvimento da pesquisa, no meio da pesquisa especificamente foi feita uma revisão do cronograma, pois a avaliação dos modelos de domínio e das restrições foi mais extenso do que se imaginava e acabou por atrasar dentro do cronograma inicial o desenvolvimento das próximas atividades, que seriam atividades de modelagem arquitetural do sistema. Porém esta surpresa foi compensada no momento do desenvolvimento do sistema, pois este foi feito utilizando testes unitários que funcionam de forma automatizada. Criando os testes unitários automáticos o tempo destinados aos testes da aplicação foram reduzidos a somente os testes de funcionalidades de telas, e assim foi possível terminar a pesquisa, e a plataforma planejada.
+Durante o desenvolvimento da pesquisa, no meio da pesquisa especificamente foi feita uma revisão do cronograma, pois a avaliação dos modelos de domínio e das restrições foi mais extensa do que se imaginava e acabou por atrasar dentro do cronograma inicial o desenvolvimento das próximas atividades, que seriam atividades de modelagem arquitetural do sistema. Porém esta surpresa foi compensada no momento do desenvolvimento do sistema, pois este foi feito utilizando testes unitários que funcionam de forma automatizada. Criando os testes unitários automáticos o tempo destinados aos testes da aplicação foram reduzidos a somente os testes de funcionalidades de telas, assim foi possível terminar a pesquisa e a plataforma planejada.
 
 === Pesquisa
 
@@ -64,7 +64,7 @@ Durante o desenvolvimento da pesquisa, no meio da pesquisa especificamente foi f
 
 Para a elaboração de um modelo de domínio foi importante a definição de entidades que existiram durante o estudo das metodologias do ENADE. Além das entidades provenientes da pesquisa feita sobre as metodologias do ENADE, houve a necessidade de elaborar vários modelos definindo a montagem da experiência dos usuários. Foi definido também os tipos de entidades de usuário que influenciam a pesquisa.
 
-Foram definidos duas entidades principais de usuários, a entidade de professor e a entidade de aluno.
+Foram definidas duas entidades principais de usuários, a entidade de professor e a entidade de aluno.
 Estas duas entidades tem dois tipos tipos de experiência diferentes dentro da plataforma desenvolvida.
 Somente a entidade de usuário aluno é submetida a avaliação e a definição de padrões de perfil de alunos e a sugestões definidas pelos usuários de tipo professor.
 
@@ -106,7 +106,7 @@ Feito isso, para este determinado aluno, de idade vinte e um anos e da cidade S�
 | Pesos | 39 | 39 | 64 | 58
 |===
 
-Feito isso, a inteligëncia concluí que, para este aluno, com idade 21 e cidade de São Paulo em suas propriedades, e levando somente elas em consideração, a provavel resposta do aluno deve ser "Gabriel". Isto não significa que a resposta é a correta, significa que, conforme o que foi aprendido com outros alunos, esta é a resposta esperada pela máquina.
+Feito isso, a inteligência concluí que, para este aluno, com idade 21 e cidade de São Paulo em suas propriedades, e levando somente elas em consideração, a provavel resposta do aluno deve ser "Gabriel", porque foi o maior peso encontrado. Isto não significa que a resposta é a correta, significa que, conforme o que foi aprendido com outros alunos, esta é a resposta esperada pela máquina.
 
 Modelo elaborado para representar a lógica do aprendizado de máquina : 
 
@@ -120,7 +120,7 @@ Fonte: elaborado pelo autor
 
 Após a definição dos modelos de domínio, do levantamento dos requisitos, e do desenho detalhado das telas do usuário aluno, o desenvolvimento foi iniciado com o objetivo de atingir o resultado final por inteiro.
 
-Foi utilizado o Domain Driven Design para arquitetar a solução e com base nas decisões de modelagem criadas a partir do paradigma de orientação a objeto, foram revisadas as tecnologias que seriam utilizadas no projeto, o foco para as escolhas das tecnologias foi em tornar o desenvolvimento didático, e tornar simples a manutenção futura da solução.
+Foi utilizado o Domain Driven Design para arquitetar a solução e com base nas decisões de modelagem criadas a partir do paradigma de orientação a objetos, foram revisadas as tecnologias que seriam utilizadas no projeto, o foco para as escolhas das tecnologias foi em tornar o desenvolvimento didático, e tornar simples a manutenção futura da solução.
 
 Tecnologias utilizadas:
 
@@ -133,7 +133,7 @@ A arquitetura previu a criação de um componente, framework, para aprendizado d
 
 Criado um componente para abstrair o aprendizado de máquina e outro para facilitar o desenvolvimento utilizando o banco de dados *MongoDB* foi necessária somente a implementação da análise feita das entidades e suas transições de estados.
 
-A arquitetura seguiu o modelo M.V.V.C (modelos, visão, modelos de visão e controlador), criando também uma camada de operações de negócio chamada de *Service Layer* (camada de serviços em português) e uma camada de acesso a banco de dados chamada *ORM* (Object-Relational Mapping). É importante lembrar que o banco de dados é não relacional, porém o framework criado para facilitar a utilização do *MongoDB* abstrai as funções do banco de dados do código *C#*, e o desenvolvedor pode utilizar objetos *C#* relacionados entre si para definir a estrutura das coleções do banco de dados. Então para o desenvolvedor, os objetos são relacionados, para o banco as relações entre objetos são consideradas uma estrutura única de dados. Isto facilita operações que utilizam filtros e extração de dados do banco de dados, pois o resultado das buscas retornam na forma dos objetos que os descrevem e os filtros são feitos com base na estrutura dos objetos que descrevem as coleções do banco.
+A arquitetura seguiu o modelo M.V.V.C (modelos, visão, modelos de visão e controlador), criando também uma camada de operações de negócio chamada de *Service Layer* (camada de serviços em português) e uma camada de acesso a banco de dados chamada *ORM* (Object-Relational Mapping). É importante lembrar que o banco de dados é não relacional, porém o framework criado para facilitar a utilização do *MongoDB* abstrai as funções do banco de dados do código *C#*, e o desenvolvedor pode utilizar objetos *C#* relacionados entre si para definir a estrutura das coleções do banco de dados. Então para o desenvolvedor,os objetos são relacionados, para o banco as relações entre objetos são consideradas uma estrutura única de dados. Isto facilita operações que utilizam filtros e extração de dados do banco de dados, pois o resultado das buscas retornam na forma dos objetos que os descrevem e os filtros são feitos com base na estrutura dos objetos que descrevem as coleções do banco.
 
 Foi elaborado um manual de como utilizar e como instalar a solução.
 //TODO: MANUAL
@@ -150,7 +150,7 @@ Padrões de alunos foram encontrados durante a pesquisa. Padrões de alunos que 
 
 ==== Modelos
 
-O objetivo refinar principal foi implementar um modelo de solução que ajudasse o aluno a desenvolver seus estudos sendo orientado por um algoritmo de aprendizado de máquina que chegasse a conclusões sobre padrões de respostas de alunos para dizer o que era esperado do aluno e o que deve fazer para melhorar a performance de seu estudo.
+O objetivo principal foi refinar e implementar um modelo de solução que ajudasse o aluno a desenvolver seus estudos. Orientado por um algoritmo de aprendizado de máquina que consegue concluir sobre padrões de respostas de alunos para dizer o que era esperado do aluno e o que o mesmo deve fazer para melhorar a performance de seu estudo.
 
 O primeiro desenvolvimento feito foi o de modelagem do domínio e definição das restrições de domínio, os modelos se demonstraram complexos pois cada uma das entidades precisava ser granularizada de forma a permitir a manipulação de estruturas de dados para análise combinatória.
 
@@ -218,7 +218,7 @@ Por exemplo, para chegar a conclusão de qual resposta é a mais provável para 
 
 Com o andamento da pesquisa foi pensado em utilizar o aprendizado de máquina para a montagem de um grafo com ligações entre tópicos acadêmicos, aulas que o professor monta em sua plataforma. Assim o sistema poderia ligar matéria, tópicos, em que o aluno obteve resultados abaixo do esperado, e fazer recomendações de acordo com o grafo determinado.
 
-A tarefa de montagem da estrutura de relacionamento dos tópicos da plataforma deve ser do professor, a explicação para isto é trazer liberdade para o professor implementar a metodologia que desejar. Foram revisadas as metodologias de ensino aprendidas em cursos de ensino a distäncia, tais como metodologias de montagem e apresentação de telas, formatação de conteúdo, linguagem e estrutura de aulas, e vídeos que poderiam ser utilizados, e foi constatado que a plataforma para definir uma ordem de tópicos precisaria seguir uma lógica de busca por experiência de usuários e conteúdo dentro dos tópicos, e a metodologia de experiência do usuário (aluno) deve ser determinada pelo professor.
+A tarefa de montagem da estrutura de relacionamento dos tópicos da plataforma deve ser do professor, a explicação para isto é trazer liberdade para o professor implementar a metodologia que desejar. Foram revisadas as metodologias de ensino aprendidas em cursos de ensino a distância, tais como metodologias de montagem e apresentação de telas, formatação de conteúdo, linguagem e estrutura de aulas, e vídeos que poderiam ser utilizados, e foi constatado que a plataforma para definir uma ordem de tópicos precisaria seguir uma lógica de busca por experiência de usuários e conteúdo dentro dos tópicos, e a metodologia de experiência do usuário (aluno) deve ser determinada pelo professor.
 
 
 === Software
@@ -259,13 +259,14 @@ _Figura {nfig}. Tela de menu do aluno._ +
 image:fig/soft/SSMenu.PNG[] +
 Fonte: elaborado pelo autor
 
-Esta foi a tela representada pelo desenho do menu do aluno (figura {nfig}), ela foi retratada em Html para poder ser visualizada na internet. Possui um menu lateral com todos os tópicos que o aluno disse que tinha interesse (utilizando a tela de gerenciar interesses). No centro da tela são os tópicos que foram escolhidos pelo aluno, porém com a descrição, o título, o sub-título e um botão de redirecionamento para fazer a aula do tópico.
+Esta foi a tela representada pelo desenho do menu do aluno (figura {nfig}), ela foi retratada em Html para poder ser visualizada na internet. Possui um menu lateral com todos os tópicos que o aluno disse que tinha interesse (utilizando a tela de gerenciar interesses. No centro da tela são os tópicos que foram escolhidos pelo aluno, porém com a descrição, o título, o sub-título e um botão de redirecionamento para fazer a aula do tópico.
 
 {counter2:nfig}
 [[fig:diag-tela4, Fig {counter:nfig}]]
 _Figura {nfig}. Tela de aula._ +
 image:fig/soft/Aula.PNG[] +
 Fonte: elaborado pelo autor
+
 No exemplo, uma das telas que um determinado professor configurou foi esta, da imagem (figura {nfig}). Ela faz parte da experiência criada pelo professor para os alunos que estão estudando o tópico. Nesta tela, mostra-se o título, o sub-título, e o texto da página. Além disto, também é mostrado o menu lateral com os tópicos escolhidos para o aluno, e um botão de prosseguir para a próxima etapa, também configurada pelo professor, que pode ser o questionário ou não.
 
 {counter2:nfig}
@@ -273,9 +274,10 @@ No exemplo, uma das telas que um determinado professor configurou foi esta, da i
 _Figura {nfig}. Tela de gerenciamento de interesses do aluno._ +
 image:fig/soft/SSInteresses.PNG[] +
 Fonte: elaborado pelo autor
+
 No exemplo, foram criados alguns tópicos com nomes não relacionados com nenhum tópico de estudo real e também não correlacionadas com nada da realidade. A tela descrita pela "figura {nfig}" tem a função de permitir o aluno adicionar e remover seus tópicos de interesses dentro da plataforma. Os que já estão adicionados a sua conta possuem um botão para desvincular de sua conta, representado com um "X" na cor vermelha. Os tópicos que o aluno não marcou como interesses de seu perfil possuem um botão de adicionar azul, que possui a função de adicionar aos tópicos de interesse do aluno.
 
-Quando o aluno adquiri resultados abaixo do esperado, esta tela também é mostrada ao aluno, porém, no caso da "figura {nfig}" esta sendo mostrado todos os tópicos cadastrados na plataforma, porém quando o aluno vai até a página por causa de um exame com nota abaixo do esperado, somente são mostrados os tópicos correlacionados (correlação feita pelo professor criador do tópico) aos tópicos que a performance não foi esperada.
+Quando o aluno adquire resultados abaixo do esperado, esta tela também é mostrada ao aluno, porém, no caso da "figura {nfig}" esta sendo mostrado todos os tópicos cadastrados na plataforma, porém quando o aluno vai até a página por causa de um exame com nota abaixo do esperado, somente são mostrados os tópicos correlacionados (correlação feita pelo professor criador do tópico) aos tópicos que a performance não foi esperada.
 
 {counter2:nfig}
 [[fig:diag-tela4, Fig {counter:nfig}]]
@@ -306,7 +308,7 @@ _Figura {nfig}. Painel de aulas programadas por um usuário professor._ +
 image:fig/soft/PainelDeAulas.PNG[] +
 Fonte: elaborado pelo autor
 
-Painel de aulas do professor, esta tela serve como tela inicial, referência para o professor sobre os seus tópicos, assim ele pode escolher se deseja criar um tópico novo, editar um tópico já existente, editar o exame de um tópico já existente, editar o conteúdo dos tópicos, adicionar ou remover alunos, adicionar ou remover professores ou configurar a experiência de ensino de um tópico.
+Painel de aulas do professor, esta tela serve como tela inicial, referência para o professor sobre os seus tópicos, assim ele pode escolher se deseja criar um tópico novo, editar um tópico já existente, editar o exame de um tópico já existente, editar o conteúdo dos tópicos,adicionar ou remover alunos, adicionar ou remover professores ou configurar a experiência de ensino de um tópico.
 
 {counter2:nfig}
 [[fig:diag-tela4, Fig {counter:nfig}]]
@@ -340,13 +342,13 @@ A figura {nfig} é o painel de configuração de páginas inicial de qualquer t�
 
 == Discussão
 
-A pesquisa tem um objetivo claro, ajudar alunos a aprender os tópicos que lhe interessam de forma rápida, clara, e com auxílio de metodologias de aprendizado de máquina para avaliar seus resultados e lhe orientar durante próximos tópicos que lhe fossem de interesse. Foi encontrado um órgão público que elabora sistemas de avaliação para o ensino superior (INEP que organiza o exame do ENADE), este órgão possui suas metodologias de avaliação, elaboração de perguntas e questionários, estas para a pesquisa foram importantes, pois, com a análise, foi possível construir os modelos de domínio e elaborar restrições com base em suas metodologias, e a elaboração dos modelos iniciais de domínio e restrições de domínio foi o primeiro passo para construir uma plataforma realmente funcional e com uma experiência que ajudasse o aluno a aprender.
+A pesquisa tem um objetivo claro, ajudar alunos a aprender os tópicos que lhe interessam de forma rápida, clara, e com auxílio de metodologias de aprendizado de máquina para avaliar seus resultados e orientar-los durante próximos tópicos que lhe fossem de interesse. Foi encontrado um órgão público que elabora sistemas de avaliação para o ensino superior (INEP que organiza o exame do ENADE), este órgão possui suas metodologias de avaliação, elaboração de perguntas e questionários, estas para a pesquisa foram importantes, pois, com a análise, foi possível construir os modelos de domínio e elaborar restrições com base em suas metodologias, e a elaboração dos modelos iniciais de domínio e restrições de domínio foi o primeiro passo para construir uma plataforma realmente funcional e com uma experiência que ajudasse o aluno a aprender.
 
-Tendo os modelos, foram criadas as decisões arquiteturais. As decisóes arquiteturais eram dependentes dos modelos de domínio, pois foi utilizada um paradigma chamado "desenho dirigido pelo domínio" (Domain Driven Design), este consiste em construir a arquitetura da solução com base no conjunto de decisões de modelagem tomadas nos modelos de domínio.
+Tendo os modelos, foram criadas as decisões arquiteturais. As decisões arquiteturais eram dependentes dos modelos de domínio, pois foi utilizada um paradigma chamado "desenho dirigido pelo domínio" (Domain Driven Design), este consiste em construir a arquitetura da solução com base no conjunto de decisões de modelagem tomadas nos modelos de domínio.
 
-Durante o processo de definição da arquitetura (conjunto de decisões de modelagem) foram identificadas os componentes (pacotes) da solução, e utilizando dos princípios de SOLID (Principio da Responsabilidade Unica) foi pensado e arquitetado um projeto de aprendizado de máquina separado do projeto principal, que interpreta qualquer tipo de objeto de memória. Para lidar com tipos genéricos de memória que poderiam ser gravadas no aprendizado de máquina, foi definido que o componente deveria utilizar de estruturas de dados definidas dinâmicamente, característica do banco de dados escolhido, *MongoDB*.
+Durante o processo de definição da arquitetura (conjunto de decisões de modelagem) foram identificados os componentes (pacotes) da solução, e utilizando dos princípios de SOLID (Principio da Responsabilidade Unica) foi pensado e arquitetado um projeto de aprendizado de máquina separado do projeto principal, que interpreta qualquer tipo de objeto de memória. Para lidar com tipos genéricos de memória que poderiam ser gravadas no aprendizado de máquina, foi definido que o componente deveria utilizar de estruturas de dados definidas dinâmicamente, característica do banco de dados escolhido, *MongoDB*.
 
-Criado o componente de aprendizado de máquina com somente duas funções, as de "obter conclusão única" e "inserir memória correlacionada", foi criado um projeto (Framework) de banco de dados para facilitar a comunicação com o banco de dados escolhido e poder defini-lo com base na descrição das estruturas de dados descritas nas classes, assim evita-se a inclusão de estruturas de dados incorretas, e ao mesmo tempo pode-se trabalhar com a descrição que fosse, pois o projeto mapeia as propriedades descritas na classe e cria uma a uma na coleção do banco de dados. Arquiteturalmente, esta decisão funcionou muito bem, foi perfeita para a situação.
+Criado o componente de aprendizado de máquina com somente duas funções, as de "obter conclusão única" e "inserir memória correlacionada", foi criado um projeto (Framework) de banco de dados para facilitar a comunicação com o banco de dados escolhido e poder definí-lo com base na descrição das estruturas de dados descritas nas classes, assim evita-se a inclusão de estruturas de dados incorretas, e ao mesmo tempo pode-se trabalhar com a descrição que fosse, pois o projeto mapeia as propriedades descritas na classe e cria uma a uma na coleção do banco de dados. Arquiteturalmente, esta decisão funcionou muito bem, foi perfeita para a situação.
 
 Então foi desenhada a experiência do usuário em forma de telas que seriam acessadas via internet. Isto significa que as telas foram pensadas levando em consideração que a arquitetura cliente servidor obriga o cliente a fazer constantes requisições ao servidor. Cada tela possui sua área de atuação e trabalha com as operações possíveis somente ao escopo da tela, por exemplo, uma tela de administração de usuários trabalha somente com as operações de deleção, atualização, inserção e seleção de usuário(s).
 
@@ -354,7 +356,7 @@ Ao tentar construir um grafo que pudesse criterizar e criar as correlações ent
 
 === Acertos
 
-O primeiro acerto da pesquisa foi em sua fase inicial, de modelagem das entidades, aonde foram escolhidas as metodologias que seriam utilizadas e quais não seriam utilizadas do ENADE para a formulação dos modelos. A pesquisa limitou as metodologias que seriam utilizadas estas são as de: construção da pergunta, avaliação do exame, e construção de questionários. A metodologia de criação de perguntas foi diretamente utilizada na classe que descreve uma pergunta no sistema, e no modelo de domínio. A metodologia de construção de questionário também gerou um modelo que foi utilizado no sistema, e no modelo de domínio.
+O primeiro acerto da pesquisa foi em sua fase inicial, de modelagem das entidades, onde foram escolhidas as metodologias que seriam utilizadas e quais não seriam utilizadas do ENADE para a formulação dos modelos. A pesquisa limitou as metodologias que seriam utilizadas estas são as de: construção da pergunta, avaliação do exame, e construção de questionários. A metodologia de criação de perguntas foi diretamente utilizada na classe que descreve uma pergunta no sistema, e no modelo de domínio. A metodologia de construção de questionário também gerou um modelo que foi utilizado no sistema, e no modelo de domínio.
 
 As decisões arquiteturais foram um sucesso como um todo, desde a separação dos componentes até a separação de suas funções utilizando o paradigma "desenho dirigido ao domínio". O paradigma escolhido levou a decisão de divisão de projetos, separando o componente de aprendizado de máquina, que possui o seu próprio domínio, do componente construído para facilitar as interações entre o banco de dados e as classes do projeto, a escolha da arquitetura de "modelo, visão, modelo de visão e controlador" permitiu o desenho das informações que seriam manipuladas por meio de classes do modelo de visão e a criação de classes de modelos fundamentais na camada de modelo.
 
@@ -364,7 +366,7 @@ O tempo destinado para a modelagem do projeto e das entidades foi extenso, e rea
 
 === Erros
 
-O tempo destinado a criar uma metodologia para correlacionar tópicos de estudo criado por professores para orientar o aluno após uma nota abaixo da esperada foi desperdiçado, pois ao conseguir estabelecer os primeiros relacionamentos utilizando um algoritmo de aprendizado de máquina, foi notado que as correlações funcionariam no contexto mais comum, isto é, o contexto que a maior porcentagem dos professores se encaixariam. Isto porém não agradaria e não ajudaria o aluno a aprender pois a metodologia de ensino muda de acordo com o professor, e experiência de aprendizado do aluno depende da metodologia que o professor desejar utilizar em sua aula.
+O tempo destinado a criar uma metodologia para correlacionar tópicos de estudo criados por professores para orientar o aluno após uma nota abaixo da esperada foi desperdiçado, pois ao conseguir estabelecer os primeiros relacionamentos utilizando um algoritmo de aprendizado de máquina, foi notado que as correlações funcionariam no contexto mais comum, isto é, o contexto que a maior porcentagem dos professores se encaixariam. Isto porém não agradaria e não ajudaria o aluno a aprender pois a metodologia de ensino muda de acordo com o professor, e experiência de aprendizado do aluno depende da metodologia que o professor deseja utilizar em sua aula.
 
 O tempo destinado na montagem das estruturas de dados das entidades de professores e alunos serviu para registrar que a estrutura de dados não pode ser padronizada, pois as propriedades de um aluno e de um professor mudam muito entre as instituições de ensino, por exemplo existem universidades que podem levar em consideração nas propriedades de seus alunos a renda de sua família, enquanto outra instituição de ensino pode levar em consideração o estado de nascimento do aluno. Estas devem ser especificadas pela instituição de ensino para refinar as combinações e probabilidades do algoritmo de aprendizado de máquina, não levando em consideração propriedades que não interessam.
 
