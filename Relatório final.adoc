@@ -216,17 +216,40 @@ Por exemplo, para chegar a conclusão de qual resposta é a mais provável para 
 
 Com o andamento da pesquisa foi pensado em utilizar o aprendizado de máquina para a montagem de um grafo com ligações entre tópicos acadêmicos, aulas que o professor monta em sua plataforma. Assim o sistema poderia ligar matéria, tópicos, em que o aluno obteve resultados abaixo do esperado, e fazer recomendações de acordo com o grafo determinado.
 
-A tarefa de montagem da estrutura de relacionamento dos tópicos da plataforma deve ser do professor, a explicação para isto é trazer liberdade para o professor implementar a metodologia que desejar. Foram revisadas as metodologias de ensino aprendidas em cursos de licensciatura, foi constatado que a plataforma para definir uma ordem de tópicos precisaria implementar algum dos tipos de metodologias para funcionar corretamente, isto não é o objetivo da pesquisa, o objetivo da pesquisa não é facilitar o uso de uma determinada metodologiae.
-
-
-
+A tarefa de montagem da estrutura de relacionamento dos tópicos da plataforma deve ser do professor, a explicação para isto é trazer liberdade para o professor implementar a metodologia que desejar. Foram revisadas as metodologias de ensino aprendidas em cursos de ensino a distäncia, tais como metodologias de montagem e apresentação de telas, formatação de conteúdo, linguagem e estrutura de aulas, e vídeos que poderiam ser utilizados, e foi constatado que a plataforma para definir uma ordem de tópicos precisaria seguir uma lógica de busca por experiência de usuários e conteúdo dentro dos tópicos, e a metodologia de experiência do usuário (aluno) deve ser determinada pelo professor.
 
 
 === Software
+
+O software previsto como resultado do trabalho de pesquisa foi implementado. O software foi desenvolvido utilizando o paradigma de desenho dirigido ao domínio, fundamentos de SOLID.
+
 ==== Componentes
+
+Foram construídos diferentes projetos que funcionam juntos para formar a solução que é a plataforma de ensino resultante da pesquisa.
+Os três componentes principais são o trabalho de camadas (Framework) do banco de dados, o projeto de aprendizado de máquina e inteligência artificial, e o projeto que possui as especificidades do negócio e a criação das telas.
+
+{counter2:nfig}
+[[fig:diag-tela4, Fig {counter:nfig}]]
+_Figura {nfig}. Tela de menu do aluno._ +
+image:fig/Componentes.PNG[] +
+Fonte: elaborado pelo autor
+
+A figura 10 mostra um modelo de como é a composição da hierarquia dos componentes. O banco de dados esta presente em todos os projetos, e o framework de banco de dados é utilizado em todos os outros componentes, sendo uma camada de abstração de operações do próprio software de comunicação com o banco de dados utilizando *C#* disponibilizado pela empresa criadora do MongoDB (mongodriver).
+
+Por sua vez, o componente de machine learning está em constante comunicação com o componente de negócio.
+
+
 ==== Telas
+
+Serão apresentadas as telas do software desenvolvido como resultado das pesquisas e experimento das metodologias criadas pela pesquisa para trazer rapidez, eficiencia, orientação e compreensão do ensino de um tópico ao aluno.
+As telas foram criadas em Html para a criação do software resultado da pesquisa.
+
+Os conjuntos de telas foram dividos em dois grupos principais, o primeiro é o grupo de telas dos alunos, e o segundo o grupo de telas dos professores.
+Os dois possuem telas de login diferentes e um professor pode acessar os recursos dos alunos, porém os alunos não podem logar no gerenciador de professores.
+
 ===== Aluno
 
+O conjunto de telas dos alunos é encarregado de lidar com todas as manipulações de dados que um aluno pode executar. Manipulações como fazer uma avaliação (exame criado pelo professor) de algum dos tópicos. Escolher os tópicos da plataforma que lhe interessam, visualizar a aula completa na estrutura planejada pelo professor. Também foi criada uma tela para visualizar um comparativo entre os resultados esperados de acordo com as propriedades do aluno e qual foi seu nível real de acerto. Também foi criada uma tela para recomendar tópicos de acordo com os tópicos que o aluno foi abaixo do esperado.
 
 {counter2:nfig}
 [[fig:diag-tela4, Fig {counter:nfig}]]
@@ -271,6 +294,9 @@ Fonte: elaborado pelo autor
 A tela da figura 12 é a tela de resposta de uma das perguntas do exame (a avaliação criada pelo professor criador do tópico) Aulas OD. Aonde o aluno escolhe somente uma das alternativas configuradas pelo professor. Assim que clica no botão verde escrito "Responder" a tela muda para a próxima pergunta.
 
 ===== Professor
+
+O conjunto de telas do professor manipula dados de conteúdo que os alunos acessam. Isto é, manipulam dados como criação de tópicos, que na plataforma foram chamados de "Aulas".
+Também podem montar suas aulas inteiras pela plataforma, colocando fotos, vídeos e textos explicativos, nomes para cada página de tópico criada, ordem que as páginas irão aparecer para o usuário. Além disso, podem adicionar ou remover alunos. Outra função importante é a vinculação de um tópico a outros tópicos, que serão sugeridos ao aluno com menor nota do que o esperado para o perfil dele, no portal do aluno.
 
 {counter2:nfig}
 [[fig:diag-tela4, Fig {counter:nfig}]]
@@ -334,7 +360,15 @@ As decisões arquiteturais foram um sucesso como um todo, desde a separação do
 
 A criação de um perfil de professor e as funções disponíveis dentro do portal para um professor foram acertos, todas as funções disponíveis ao professor foram pensadas na pesquisa com o objetivo de trazer total capacidade de manipulação da experiência do aluno dentre seus tópicos pelo professor. Por mais que o objetivo fosse criar um ambiente aonde o aluno conseguisse aprender os seus tópicos de interesse de uma forma rápida, fácil e orientada, foi notado que o professor possui um papel insubstituível na montagem da aula e da prova em um determinado tópico, possui também papel na escolha dos tópicos correlacionados a outros tópicos.
 
+O tempo destinado para a modelagem do projeto e das entidades foi extenso, e realmente foi necessário bastante tempo para fazer a análise e o desenho completo da solução, determinar papéis, do aluno, do professor, do aprendizado, e decisões técnologicas que tornaram o desenvolvimento mais rápido e intuitivo (exemplo do paradigma de "desenho dirigido ao domínio").
+
 === Erros
+
+O tempo destinado a criar uma metodologia para correlacionar tópicos de estudo criado por professores para orientar o aluno após uma nota abaixo da esperada foi desperdiçado, pois ao conseguir estabelecer os primeiros relacionamentos utilizando um algoritmo de aprendizado de máquina, foi notado que as correlações funcionariam no contexto mais comum, isto é, o contexto que a maior porcentagem dos professores se encaixariam. Isto porém não agradaria e não ajudaria o aluno a aprender pois a metodologia de ensino muda de acordo com o professor, e experiência de aprendizado do aluno depende da metodologia que o professor desejar utilizar em sua aula.
+
+O tempo destinado na montagem das estruturas de dados das entidades de professores e alunos serviu para registrar que a estrutura de dados não pode ser padronizada, pois as propriedades de um aluno e de um professor mudam muito entre as instituições de ensino, por exemplo existem universidades que podem levar em consideração nas propriedades de seus alunos a renda de sua família, enquanto outra instituição de ensino pode levar em consideração o estado de nascimento do aluno. Estas devem ser especificadas pela instituição de ensino para refinar as combinações e probabilidades do algoritmo de aprendizado de máquina, não levando em consideração propriedades que não interessam.
+//TODO RETIRAR PARTE SOBRE LICENCIATURA
+
 === Conclusão
 
 == Bibliografia:
