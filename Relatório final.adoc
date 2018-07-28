@@ -112,9 +112,11 @@ Com o intuito de fazer integrações com outros sistemas, foi construído um ser
 *Modelos*:
 
 Para a elaboração de um modelo de domínio foi importante a definição de várias entidades que existiram durante o estudo das metodologias do ENADE. Além das entidades provenientes da pesquisa feita sobre as metodologias do ENADE, houve a necessidade de elaborar vários modelos definindo a montagem da experiência dos usuários. Foi definido também os tipos de entidades de usuário que influenciam a pesquisa.
+
 Foram definidos duas entidades principais de usuários, a entidade de professor e a entidade de aluno.
 Estas duas entidades tem dois tipos tipos de experiência diferentes dentro da plataforma desenvolvida.
 Somente a entidade de usuário aluno é submetida a avaliação e a definição de padrões de perfil de alunos e a sugestões definidas pelos usuários de tipo professor.
+
 Foram definidos também alguns modelos de tipo de questão e tipos de questionários. Modelos de questões e respostas foram elaborados conforme as limitações das elaborações de questões do ENADE, com a limitação de não poderem ser aceitas questões com imagens e vídeos, somente aceitas questões textuais.
 Elaborados os modelos de domínio, para se ter a experiência de um usuário na plataforma da pesquisa, foi realizado o desenho de várias telas, e planos de navegação dos tipos de usuário. Os planos de navegação dentro da plataforma passaram por um processo de refinamento por conta da experiência visual do usuário aluno, a plataforma deveria ser intuitiva e de fácil utilização, principalmente por parte do aluno.
 
@@ -312,7 +314,26 @@ A figura 16 é o painel de configuração de páginas inicial de qualquer tópic
 
 == Discussão
 
+A pesquisa tem um objetivo claro, ajudar alunos a aprender os tópicos que lhe interessam de forma rápida, clara, e com auxílio de metodologias de aprendizado de máquina para avaliar seus resultados e lhe orientar durante próximos tópicos que lhe fossem de interesse. Foi encontrado um órgão público que elabora sistemas de avaliação para o ensino superior (INEP que organiza o exame do ENADE), este órgão possui suas metodologias de avaliação, elaboração de perguntas e questionários, estas para a pesquisa foram importantes, pois, com a análise, foi possível construir os modelos de domínio e elaborar restrições com base em suas metodologias, e a elaboração dos modelos iniciais de domínio e restrições de domínio foi o primeiro passo para construir uma plataforma realmente funcional e com uma experiência que ajudasse o aluno a aprender.
+
+Tendo os modelos, foram criadas as decisões arquiteturais. As decisóes arquiteturais eram dependentes dos modelos de domínio, pois foi utilizada um paradigma chamado "desenho dirigido pelo domínio" (Domain Driven Design), este consiste em construir a arquitetura da solução com base no conjunto de decisões de modelagem tomadas nos modelos de domínio.
+
+Durante o processo de definição da arquitetura (conjunto de decisões de modelagem) foram identificadas os componentes (pacotes) da solução, e utilizando dos princípios de SOLID (Principio da Responsabilidade Unica) foi pensado e arquitetado um projeto de aprendizado de máquina separado do projeto principal, que interpreta qualquer tipo de objeto de memória. Para lidar com tipos genéricos de memória que poderiam ser gravadas no aprendizado de máquina, foi definido que o componente deveria utilizar de estruturas de dados definidas dinâmicamente, característica do banco de dados escolhido, *MongoDB*.
+
+Criado o componente de aprendizado de máquina com somente duas funções, as de "obter conclusão única" e "inserir memória correlacionada", foi criado um projeto (Framework) de banco de dados para facilitar a comunicação com o banco de dados escolhido e poder defini-lo com base na descrição das estruturas de dados descritas nas classes, assim evita-se a inclusão de estruturas de dados incorretas, e ao mesmo tempo pode-se trabalhar com a descrição que fosse, pois o projeto mapeia as propriedades descritas na classe e cria uma a uma na coleção do banco de dados. Arquiteturalmente, esta decisão funcionou muito bem, foi perfeita para a situação.
+
+Então foi desenhada a experiência do usuário em forma de telas que seriam acessadas via internet. Isto significa que as telas foram pensadas levando em consideração que a arquitetura cliente servidor obriga o cliente a fazer constantes requisições ao servidor. Cada tela possui sua área de atuação e trabalha com as operações possíveis somente ao escopo da tela, por exemplo, uma tela de administração de usuários trabalha somente com as operações de deleção, atualização, inserção e seleção de usuário(s).
+
+Ao tentar construir um grafo que pudesse criterizar e criar as correlações entre os tópicos foi notado que o professor deve possuir liberdade para montar o grafo que necessitar dentre os tópicos que julga relevante para seus alunos. Então o aprendizado de máquina foi limitado a função de verificar o resultado esperado para um determinado perfil de aluno. Esta foi uma decisão correta, pois existem fatores que não são possíveis considerar em um software que devem ser levados em consideração ao criar um grafo de correlações entre tópicos a serem abordados, tais como capacidade dos alunos, temas específicos determinados pelo professor para uma matéria.
+
 === Acertos
+
+O primeiro acerto da pesquisa foi em sua fase inicial, de modelagem das entidades, aonde foram escolhidas as metodologias que seriam utilizadas e quais não seriam utilizadas do ENADE para a formulação dos modelos. A pesquisa limitou as metodologias que seriam utilizadas estas são as de: construção da pergunta, avaliação do exame, e construção de questionários. A metodologia de criação de perguntas foi diretamente utilizada na classe que descreve uma pergunta no sistema, e no modelo de domínio. A metodologia de construção de questionário também gerou um modelo que foi utilizado no sistema, e no modelo de domínio.
+
+As decisões arquiteturais foram um sucesso como um todo, desde a separação dos componentes até a separação de suas funções utilizando o paradigma "desenho dirigido ao domínio". O paradigma escolhido levou a decisão de divisão de projetos, separando o componente de aprendizado de máquina, que possui o seu próprio domínio, do componente construído para facilitar as interações entre o banco de dados e as classes do projeto, a escolha da arquitetura de "modelo, visão, modelo de visão e controlador" permitiu o desenho das informações que seriam manipuladas por meio de classes do modelo de visão e a criação de classes de modelos fundamentais na camada de modelo.
+
+A criação de um perfil de professor e as funções disponíveis dentro do portal para um professor foram acertos, todas as funções disponíveis ao professor foram pensadas na pesquisa com o objetivo de trazer total capacidade de manipulação da experiência do aluno dentre seus tópicos pelo professor. Por mais que o objetivo fosse criar um ambiente aonde o aluno conseguisse aprender os seus tópicos de interesse de uma forma rápida, fácil e orientada, foi notado que o professor possui um papel insubstituível na montagem da aula e da prova em um determinado tópico, possui também papel na escolha dos tópicos correlacionados a outros tópicos.
+
 === Erros
 === Conclusão
 
