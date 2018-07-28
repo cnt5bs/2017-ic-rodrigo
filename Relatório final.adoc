@@ -7,7 +7,7 @@
 
 == Introdução
 
-O trabalho de um aluno em uma instituição acadêmica pode ser avaliada de várias maneiras, uma das mais complicadas é utilizar o histórico de alunos para determinar se a performance de alguém foi satisfatória, e isso se dá porque é difícil criar os padrões de alunos conforme suas propriedades.
+A metodologia para avaliação de um trabalho de um aluno em uma instituição acadêmica é uma tarefa dependente do seu orientador ou de algum mecanismo de avaliação criterizado, e varia de acordo com o professor ou com os mecanimos que a instituição utiliza. A proposta da pesquisa é utilizar técnicas de inteligência artificial para ajudar o aluno a aprender os tópicos que interessam a instituição de ensino ensinar ou o aluno a aprender. Utilizando o histórico de alunos para determinar se a performance de alguém foi satisfatória, e criando padrões de alunos conforme suas propriedades é possível criar uma estimativa de quanto é esperado que um determinado perfil de aluno, como vai se comportar, quais sugestões geraram bons resultados, e entre outras análises.
 
 A pesquisa busca metodologias de avaliação do aluno utilizando técnicas de inteligência artificial e aprendizado de máquina para com estas ajudar na experiência e resultados de estudos dos alunos de instituições acadêmicas.
 Foram selecionadas propriedades (de um aluno) para serem consideradas na criação dos padrões de alunos e suas respectivas provas e avaliações.
