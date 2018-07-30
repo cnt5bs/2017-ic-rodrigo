@@ -7,7 +7,7 @@
 
 == Introdução
 
-A metodologia para avaliação de um trabalho de um aluno em uma instituição acadêmica é uma tarefa dependente do seu orientador ou de algum mecanismo de avaliação criterizado, e varia de acordo com o professor ou com os mecanimos que a instituição utiliza. A proposta da pesquisa é utilizar técnicas de inteligência artificial para ajudar o aluno a aprender os tópicos que interessam a instituição de ensino ensinar ou o aluno a aprender. Utilizando o histórico de alunos para determinar se a performance de alguém foi satisfatória, e criando padrões de alunos conforme suas propriedades é possível criar uma estimativa de quanto é esperado que um determinado perfil de aluno, como vai se comportar, quais sugestões geraram bons resultados, e entre outras análises.
+A metodologia para avaliação de um trabalho de um aluno em uma instituição acadêmica é uma tarefa dependente do seu orientador ou de algum mecanismo de avaliação criterizado, e varia de acordo com o professor ou com os mecanimos que a instituição utiliza. A proposta da pesquisa é utilizar técnicas de inteligência artificial para ajudar o aluno a aprender os tópicos que interessam a instituição de ensino ensinar ou o aluno a aprender. Utilizando o histórico de alunos para determinar se a performance de alguém foi satisfatória, e criando padrões de alunos conforme suas propriedades é possível criar uma estimativa de quanto é esperado de um determinado perfil de aluno, como vai se comportar, quais sugestões geram bons resultados, e entre outras análises.
 
 A pesquisa busca metodologias de avaliação do aluno utilizando técnicas de inteligência artificial e aprendizado de máquina para com estas ajudar na experiência e resultados de estudos dos alunos de instituições acadêmicas.
 Foram selecionadas propriedades (de um aluno) para serem consideradas na criação dos padrões de alunos e suas respectivas provas e avaliações.
@@ -21,20 +21,20 @@ A pesquisa, considera, como referência, os critérios e as respostas elaboradas
 
 Para auxiliar na elaboração e na avaliação da prova foi estudado o sistema de criação e avaliação de provas para o ensino superior do INEP (ENADE).
 
-Para a pesquisa, foram determinadas as metodologias de criação de avaliações do ENADE como base para criação das perguntas e alternativas dentro da plataforma da pesquisa. Estas são: Somente suportadas as criações de questionários com perguntas textuais (somente escritas, não possuem imagens) de resposta única, e com alternativas textuais.
+Para a pesquisa, foram determinadas as metodologias de criação de avaliações do ENADE como base para criação das perguntas e alternativas dentro da plataforma da pesquisa. Algumas características para elaboração das perguntas são específicas da plataforma, são estas: Somente suportadas as criações de questionários com perguntas textuais (somente escritas, não possuem imagens) de resposta única, e com alternativas textuais.
 
-Foram estudadas as metodologias que o ENADE utiliza para a construção de perguntas, avaliação das respostas, construção de questionário, e análise de alternativas, e com isso foram desenhados modelos de domínio para representar as entidades que precisariam ser representadas.
+Foram estudadas as metodologias que o ENADE utiliza para a construção de perguntas, avaliação das respostas, construção de questionário, e análise de alternativas, e com isso foram desenhados modelos de domínio para representar as entidades.
 
 Para auxiliar nos tópicos de, elaboração da prova, fluxo e experiência de ensino de um aluno, utilizando das metodologias do INEP, foi criada uma plataforma de auxílio ao ensino em que o professor cria e edita a sua aula, e a experiência do aluno (ordenando e definindo o conteúdo de cada página que ele verá), escreve sobre o conteúdo que deseja, monta provas, e os alunos são avaliados e auxiliados pela plataforma.
 
 É uma plataforma de ensino que auxilia o aluno em seus estudos avaliando, por meio de aprendizado de máquina, se o resultado foi o esperado para aquele perfil de aluno. Caso não sejam os resultados esperados, e o aluno tiver ido pior do que o esperado em alguma matéria, a plataforma de ensino recomenda ao aluno estudar outras matérias relacionadas para melhorar sua base conceitual.
 
-Primeiramente é feita a avaliação criada pelo professor, a prova criada pelo professor. Após a avaliação do professor é feita a avaliação da máquina para determinar se o resultado que era esperado do aluno foi satisfatório ou não.
+Primeiramente é feita a avaliação criada pelo professor, a prova criada pelo professor. Após a avaliação do professor é feita a avaliação da máquina para determinar se o resultado que era esperado do perfil aluno foi atingido ou não.
 
 O professor que utiliza a plataforma para montar as suas matérias possui um gerenciador de conteúdo que o permite montar uma sequência de slides da sua matéria, colocar vídeos, mais slides, criar páginas explicativas, escrever o conteúdo de sua matéria, organizar por tópicos, montar suas provas, determinar, mudar ou editar a ordem das páginas.
-Para cada prova que o aluno faz, ele ganha uma pontuação no sistema, pontuação que ele poderá ver em uma página de "Análise dos dados", ao lado de uma análise de como o sistema esperava que ele fosse, e suas sugestões de matéria quando sua nota for menor do que a esperada.
+Para cada prova que o aluno faz, ele ganha uma pontuação no sistema, pontuação que ele poderá ver em uma página de "Análise dos dados", ao lado de uma análise de como o sistema esperava que ele fosse, e suas sugestões de tópicos a serem estudados quando sua nota for menor do que a esperada.
 
-As matérias relacionadas, que podem melhorar a base conceitual de um aluno, são definidas pelo próprio professor que cria a experiência de estudo da matéria em seu gerenciador de conteúdo. Assim as matérias recomendadas a um aluno que não conseguiu atingir o resultado esperado é uma recomendação do professor.
+Os tópicos relacionados, que podem melhorar a base conceitual de um aluno, são definidos pelo próprio professor que cria a experiência de estudo da matéria em seu gerenciador de conteúdo. Assim as matérias recomendadas a um aluno que não conseguiu atingir o resultado esperado é uma recomendação do professor.
 
 Utilizando desta plataforma, o aluno poderá ser avaliado conforme seu professor deseja, com base no resultado de outras avaliações de outros alunos e a análise de suas propriedades, o sistema pode retirar padrões de alunos para dizer o que se era esperado de um aluno em alguma situação.
 
@@ -44,11 +44,11 @@ Com o intuito de fazer integrações com outros sistemas, foi construído um ser
 
 == Metodologia
 
-As metodologias utilizadas foram divididas em três grandes grupos, metodologias para o trabalho de pesquisa, metodologias durante a produção do software e metodologias de controle de atividades. As metodologias do trabalho de pesquisa são as geradas pela base conceitual adquirida pelo trabalho de pesquisa sobre o tema. As metodologias da produção do software são conclusões e decisões de modelagem técnicas que provém da base conceitual contruída. As metodologias de controle de atividade foram durante a pesquisa as responsáveis pela avaliação do andamento da pesquisa pelo próprio pesquisador.
+As metodologias utilizadas foram divididas em três grandes grupos, metodologias para o trabalho de pesquisa, metodologias durante a produção do software e metodologias de controle de atividades. As metodologias do trabalho de pesquisa são as geradas pela base conceitual adquirida pelo trabalho de pesquisa. As metodologias da produção do software são conclusões e decisões de modelagem técnicas que provém da base conceitual contruída. As metodologias de controle de atividade foram durante a pesquisa as responsáveis pela avaliação do andamento da pesquisa pelo próprio pesquisador.
 
 === Atividades
 
-A pesquisa começou em agosto de dois mil e dezessete, com encontros em todos os meses em diante até agosto de dois mil e dezoito. O orientador avaliava o andamento da pesquisa e trazia orientações para que não houvessem problemas até o fim da pesquisa.
+A pesquisa começou em agosto de dois mil e dezessete, com encontros em todos os meses em diante, até julho de dois mil e dezoito. O orientador avaliava o andamento da pesquisa e trazia orientações para que não houvessem problemas até o fim da pesquisa.
 
 Foi feita durante as reuniões a gerência do projeto e análise dos riscos que poderiam levar a pesquisa a não atingir o sucesso, que seria a conclusão do projeto de pesquisa com um projeto de software funcional, resultado do trabalho de pesquisa.
 
@@ -56,7 +56,7 @@ O tempo destinado ao estudo de tecnologias e os modelos da solução que seria p
 
 *Revisão do cronograma*:
 
-Durante o desenvolvimento da pesquisa, no meio da pesquisa especificamente foi feita uma revisão do cronograma, pois a avaliação dos modelos de domínio e das restrições foi mais extensa do que se imaginava e acabou por atrasar dentro do cronograma inicial o desenvolvimento das próximas atividades, que seriam atividades de modelagem arquitetural do sistema. Porém esta surpresa foi compensada no momento do desenvolvimento do sistema, pois este foi feito utilizando testes unitários que funcionam de forma automatizada. Criando os testes unitários automáticos o tempo destinados aos testes da aplicação foram reduzidos a somente os testes de funcionalidades de telas, assim foi possível terminar a pesquisa e a plataforma planejada.
+No meio da pesquisa foi feita uma revisão do cronograma, pois o tempo destinado a avaliação dos modelos de domínio e das restrições foi mais extenso do que se imaginava e acabou por atrasar, dentro do cronograma inicial, o desenvolvimento das próximas atividades, que seriam atividades de modelagem arquitetural do sistema. Porém esta surpresa foi compensada no momento do desenvolvimento do sistema, pois este foi feito utilizando testes unitários que funcionam de forma automatizada. Criando os testes unitários automáticos o tempo destinados aos testes da aplicação foram reduzidos a somente os testes de funcionalidades de telas, assim foi possível terminar a pesquisa e o desenvolvimento da plataforma planejada.
 
 === Pesquisa
 
@@ -118,9 +118,9 @@ Fonte: elaborado pelo autor
 
 === Produção do software
 
-Após a definição dos modelos de domínio, do levantamento dos requisitos, e do desenho detalhado das telas do usuário aluno, o desenvolvimento foi iniciado com o objetivo de atingir o resultado final por inteiro.
+Após a definição dos modelos de domínio, do levantamento dos requisitos, e do desenho detalhado das telas do usuário aluno, o desenvolvimento foi iniciado com o objetivo de atingir o resultado final (o desenvolvimento inteiro da plataforma).
 
-Foi utilizado o Domain Driven Design para arquitetar a solução e com base nas decisões de modelagem criadas a partir do paradigma de orientação a objetos, foram revisadas as tecnologias que seriam utilizadas no projeto, o foco para as escolhas das tecnologias foi em tornar o desenvolvimento didático, e tornar simples a manutenção futura da solução.
+Foi utilizado o paradigma Domain Driven Design (desenho dirigido pelo domínio) para arquitetar a solução, e com base nas decisões de modelagem criadas a partir do paradigma de orientação a objetos foram definidas as tecnologias que seriam utilizadas no projeto, o foco para as escolhas das tecnologias foi tornar o desenvolvimento didático, e tornar simples a manutenção futura da solução.
 
 Tecnologias utilizadas:
 
@@ -129,14 +129,11 @@ O sistema operacional para rodar a aplicação tem que ser um Windows Server. O 
 
 A solução foi preparada para ser dinamicamente configurada. Foi construído um "Framework" para melhorar o desenvolvimento com utilizando o banco de dados *MongoDB*, este framework abstrai a configuração de conexão entre a aplicação e o banco de dados utilizando um arquivo que utiliza da notação de objetos javascript (*JSON*).
 
-A arquitetura previu a criação de um componente, framework, para aprendizado de máquina, este foi nomeado de "PUC.Log.Learn". Este componente é referenciado dentro do software da plataforma e realiza os cálculos de probabilidades, pesos, permutação de propriedades de objetos e chega a conclusão dado um determinado número de ocorrências registradas. O componente possui duas funções principais, a de inserção de ocorrência, que possui nome em inglês *InsertMemory* (inserir memória em português), e a função de conclusão única, possui nome em inglês *GetUniqueConclusion* (obter conclusão única).
+A arquitetura previu a criação de um componente, *framework* (trabalho de camada), para aprendizado de máquina, este foi nomeado de "PUC.Log.Learn". Este componente é referenciado dentro do software da plataforma e realiza os cálculos de probabilidades, pesos, permutação de propriedades de objetos e chega a conclusão dado um determinado número de ocorrências registradas. O componente possui duas funções principais, a de inserção de ocorrência, que possui nome em inglês *InsertMemory* (inserir memória em português), e a função de conclusão única, possui nome em inglês *GetUniqueConclusion* (obter conclusão única).
 
 Criado um componente para abstrair o aprendizado de máquina e outro para facilitar o desenvolvimento utilizando o banco de dados *MongoDB* foi necessária somente a implementação da análise feita das entidades e suas transições de estados.
 
-A arquitetura seguiu o modelo M.V.V.C (modelos, visão, modelos de visão e controlador), criando também uma camada de operações de negócio chamada de *Service Layer* (camada de serviços em português) e uma camada de acesso a banco de dados chamada *ORM* (Object-Relational Mapping). É importante lembrar que o banco de dados é não relacional, porém o framework criado para facilitar a utilização do *MongoDB* abstrai as funções do banco de dados do código *C#*, e o desenvolvedor pode utilizar objetos *C#* relacionados entre si para definir a estrutura das coleções do banco de dados. Então para o desenvolvedor,os objetos são relacionados, para o banco as relações entre objetos são consideradas uma estrutura única de dados. Isto facilita operações que utilizam filtros e extração de dados do banco de dados, pois o resultado das buscas retornam na forma dos objetos que os descrevem e os filtros são feitos com base na estrutura dos objetos que descrevem as coleções do banco.
-
-Foi elaborado um manual de como utilizar e como instalar a solução.
-//TODO: MANUAL
+A arquitetura seguiu o modelo M.V.V.C (modelos, visão, modelos de visão e controlador), criando também uma camada de operações de negócio chamada de *Service Layer* (camada de serviços em português) e uma camada de acesso a banco de dados chamada *ORM* (Object-Relational Mapping). É importante lembrar que o banco de dados é não relacional, porém o *framework* criado para facilitar a utilização do *MongoDB* abstrai as funções do banco de dados do código *C#*, e o desenvolvedor pode utilizar objetos *C#* relacionados entre si para definir a estrutura das coleções do banco de dados. Então para o desenvolvedor, os objetos são relacionados, para o banco as relações entre objetos são consideradas uma estrutura única de dados. Isto facilita operações que utilizam filtros e extração de dados do banco de dados, pois o resultado das buscas retornam na forma das classes que os descrevem e os filtros são feitos com base na estrutura das classes.
 
 <<<
 
@@ -354,7 +351,7 @@ Então foi desenhada a experiência do usuário em forma de telas que seriam ace
 
 Ao tentar construir um grafo que pudesse criterizar e criar as correlações entre os tópicos foi notado que o professor deve possuir liberdade para montar o grafo que necessitar dentre os tópicos que julga relevante para seus alunos. Então o aprendizado de máquina foi limitado a função de verificar o resultado esperado para um determinado perfil de aluno. Esta foi uma decisão correta, pois existem fatores que não são possíveis considerar em um software que devem ser levados em consideração ao criar um grafo de correlações entre tópicos a serem abordados, tais como capacidade dos alunos, temas específicos determinados pelo professor para uma matéria.
 
-=== Acertos
+=== Sucessos
 
 O primeiro acerto da pesquisa foi em sua fase inicial, de modelagem das entidades, onde foram escolhidas as metodologias que seriam utilizadas e quais não seriam utilizadas do ENADE para a formulação dos modelos. A pesquisa limitou as metodologias que seriam utilizadas, e estas são as de: construção da pergunta, avaliação do exame, e construção de questionários. A metodologia de criação de perguntas foi diretamente utilizada na classe que descreve uma pergunta no sistema, e no modelo de domínio. A metodologia de construção de questionário também gerou um modelo que foi utilizado no sistema, e no modelo de domínio.
 
@@ -364,7 +361,7 @@ A criação de um perfil de professor e as funções disponíveis dentro do port
 
 O tempo destinado para a modelagem do projeto e das entidades foi extenso, e realmente foi necessário bastante tempo para fazer a análise e o desenho completo da solução, determinar papéis, do aluno, do professor, do aprendizado de máquina, e decisões técnologicas que tornaram o desenvolvimento mais rápido e intuitivo (exemplo do paradigma de "desenho dirigido ao domínio").
 
-=== Erros
+=== Insucessos
 
 O tempo destinado a criar uma metodologia para correlacionar tópicos de estudo criados por professores para orientar o aluno após uma nota abaixo da esperada foi desperdiçado, pois ao conseguir estabelecer os primeiros relacionamentos utilizando um algoritmo de aprendizado de máquina, foi notado que as correlações funcionariam no contexto mais comum, isto é, o contexto que a maior porcentagem dos professores se encaixariam. Isto porém não agradaria e não ajudaria o aluno a aprender pois a metodologia de ensino muda de acordo com o professor, e a experiência de aprendizado do aluno depende da metodologia que o professor deseja utilizar em sua aula.
 
@@ -374,22 +371,31 @@ O tempo destinado a montagem das estruturas de dados das entidades de professore
 
 == Bibliografia:
 
-
-- http://download.inep.gov.br/educacao_basica/provinha_brasil/documentos/2012/guia_elaboracao_itens_provinha_brasil.pdf[Provinha Brasil] : http://download.inep.gov.br/educacao_basica/provinha_brasil/documentos/2012/guia_elaboracao_itens_provinha_brasil.pdf
+[.text-left]
+- http://download.inep.gov.br/educacao_basica/provinha_brasil/documentos/2012/guia_elaboracao_itens_provinha_brasil.pdf[Provinha Brasil] Disponível em : 
+<download.inep.gov.br/educacao_basica/provinha_brasil/documentos/2012/guia_elaboracao_itens_provinha_brasil.pdf> Acessado em : 29/07/2018
 +
-- https://impa.br/wp-content/uploads/2016/12/helio_f_costa.pdf[Mestrado sobre produção de itens] : 
-https://impa.br/wp-content/uploads/2016/12/helio_f_costa.pdf
+- https://impa.br/wp-content/uploads/2016/12/helio_f_costa.pdf[Mestrado sobre produção de itens] Disponível em : 
+<impa.br/wp-content/uploads/2016/12/helio_f_costa.pdf Acessado em : 29/07/2018>
 +
-- http://www.uel.br/grupo-estudo/gepema/Disserta%E7%F5es/2014_disserta%E7%E3o_Ademir.pdf[Mestrado sobre enunciados de itens] : 
-http://www.uel.br/grupo-estudo/gepema/Disserta%E7%F5es/2014_disserta%E7%E3o_Ademir.pdf
+- http://www.uel.br/grupo-estudo/gepema/Disserta%E7%F5es/2014_disserta%E7%E3o_Ademir.pdf[Mestrado sobre enunciados de itens]  Disponível em : 
+<www.uel.br/grupo-estudo/gepema/Disserta%E7%F5es/2014_disserta%E7%E3o_Ademir.pdf> Acessado em : 29/07/2018
 +
-- http://www.publicadireito.com.br/artigos/?cod=480167897cc43b2f[Bloom nas avaliações discentes] : 
-http://www.publicadireito.com.br/artigos/?cod=480167897cc43b2f
+- http://www.publicadireito.com.br/artigos/?cod=480167897cc43b2f[Bloom nas avaliações discentes] Disponível em : 
+<www.publicadireito.com.br/artigos/?cod=480167897cc43b2f> Acessado em : 29/07/2018
 +
-- http://www.portalavaliacao.caedufjf.net/wp-content/uploads/2012/02/Guia_De_-Elaboração_De_Itens_LP.pdf[Guia de elaboração de itens] : http://www.portalavaliacao.caedufjf.net/wp-content/uploads/2012/02/Guia_De_-Elaboração_De_Itens_LP.pdf
+- http://www.portalavaliacao.caedufjf.net/wp-content/uploads/2012/02/Guia_De_-Elaboração_De_Itens_LP.pdf[Guia de elaboração de itens]  Disponível em : <www.portalavaliacao.caedufjf.net/wp-content/uploads/2012/02/Guia_De_-Elaboração_De_Itens_LP.pdf> Acessado em : 29/07/2018
 +
-- http://www.adventista.edu.br/_imagens/area_academica/files/guia-de-elaboracao-de-itens-120804112623-phpapp01(3).pdf[Guia para questões de múltipla escolha] : http://www.adventista.edu.br/_imagens/area_academica/files/guia-de-elaboracao-de-itens-120804112623-phpapp01(3).pdf
+- http://www.adventista.edu.br/_imagens/area_academica/files/guia-de-elaboracao-de-itens-120804112623-phpapp01(3).pdf[Guia para questões de múltipla escolha] Disponível em : <www.adventista.edu.br/_imagens/area_academica/files/guia-de-elaboracao-de-itens-120804112623-phpapp01(3).pdf> Acessado em : 29/07/2018
 +
-- http://www.athenaseducacional.com.br/media/files/135/135_87.pdf[Guia de elaboração de itens] : 
-http://www.athenaseducacional.com.br/media/files/135/135_87.pdf
+- http://www.athenaseducacional.com.br/media/files/135/135_87.pdf[Guia de elaboração de itens] Disponível em : 
+<www.athenaseducacional.com.br/media/files/135/135_87.pdf> Acessado em : 29/07/2018
++
+- Brasil. Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira (Inep). Guia de elaboração de itens. Brasília, 2010. v.1
++
+-Guia de correção de interpretação dos resultados Provinha Brasil - Leitura, 2011. Disponível em:<www.portal.inep.gov.br/web/provinha-brasil/provinha-brasil>
++
+- EVANS, E. Domain Driven Design: 2. ed. Rio de Janeiro: ALTA BOOKS, 2010
++
+- Gane, C.;Sarson, T., Análise estruturada de sistemas: 1. ed. São Paulo: Livros Técnicos e Científicos Editora S.A., 1983
 +
