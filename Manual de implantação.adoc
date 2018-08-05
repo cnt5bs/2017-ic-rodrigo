@@ -1,0 +1,48 @@
+= Projeto Tutor de Estudos INEP: Manual de Implantação - Rodrigo Nogueira
+:toc:
+:toc-title: Sumário
+:figure-caption: Figura
+:sectnums:
+
+
+== Localmente
+
+=== Pré requisitos
+
+==== Ferramentas instaladas : 
+
+- Windows 10.
+
+- Banco de dados MongoDB instalado. (Link para o download: <https://www.mongodb.com/download-center#community> Acessado dia cinco de agosto de dois mil e dezoito).
+
+- Visual Studio 2017^ (versão de dois mil e dezessete ou superior), com o pacote de desenvolvimento web instalado.
+
+==== Frameworks e pacotes a serem garantidos : 
+
+- MongoDriver C#.
+
+- Documents.Domain.Mong (Criado pelo autor, esta presente no repositório dos pacotes nuget do visual studio, também presente no github no seguinte link <https://github.com/MEUDEUSDOCEUNAOENCONTRONOME/Controle.Domain> , a versão que o sistema utiliza é a versão 1.0.1 presente no nuget).
+
+- O Framework de inteligência artificial é um dos projetos que está no repositório oficial no github da pesquisa (<https://github.com/cnt5bs/2017-ic-rodrigo> ). Está na pasta "soft" dentro da pasta "ia", se chama "PUC.Log.Learn". Este é referenciado pelo projeto utilizando referênciamento das bibliotecas. Por isso, o projeto "PUC.Log.Learn" deve ter suas ".dll"s referenciadas pelo projeto da plataforma ou ser adicionado ao projeto da plataforma, isto pode ser feito dentro da IDE Visual Studio 2017, basta clicar com botão direito em referências, e adicionar seus respectivos arquivos com extensão ".dll", ou clicar em adicionar projeto e adicionar o projeto "PUC.Log.Learn". Caso adicionado o projeto "PUC.Log.Learn" na solução é necessário adicioná-lo as referencias do projeto "ISV" que esta dentro da solução da plataforma.
+
+==== Configurações extras
+
+Dentro do projeto da plataforma, existe uma pasta chamada "Config". Dentro desta pasta existe um arquivo de extensão "json" chamado "DB" ("DB.json"), dentro deste arquivo, utilizando a notação de objetos javascript são especificadas as URLs de conexão para o banco de dados, devem ser modificadas caso não estejam corretas. Esta é uma URL reconhecida pelo mongodb e que pode utilizar das propriedades de comunicação do mongodb, como por exemplo, autenticação de usuários, portas, nomes de bancos para autenticação e entre outros. A porta padrão utilizada pelo serviço do banco de dados MongoDB é a 27017. Dentro do arquivo são especificadas duas urls, uma para o banco de dados de inteligência artificial e outra para o banco de dados da plataforma, chamado de orientação. As duas devem ser preenchidas utilizando o nome "ConnectionUrl" para a URL de conexão da plataforma e "ConnectionIA" para a URL de conexão do framework de inteligência artificial.
+
+=== Executar
+
+Basta executar a aplicação pelo Visual Studio, o framework de banco de dados se encarregará de criar os bancos de dados no local correto utilizando o localhost.
+
+== Produção
+
+=== Ferramentas instaladas :
+
+- Windows Server com IIS 8^ (Internet Information Service da versão oito ou superior).
+
+- MongoDB.
+
+=== Pacote para deploy : 
+
+- Se a aplicação esta funcionando corretamente no ambiente de desenvolvimento, no ambiente de desenvolvimento deve ser gerado um pacote do projeto da plataforma, nele todos os frameworks estarão empacotados. Utilizando o Visual Studio 2017 deve-se, após abrir o projeto (clicando no arquivo de extensão "sln") deve-se selecionar o projeto que deseja criar o pacote, clicar com botão direito do "mouse" para abrir uma barra de ferramentas do projeto, e clicar em "Publicar". O pacote gerado poderá ser publicado de várias maneiras, a forma recomendada pelo autor é gerar o pacote em forma de pasta do sistema operacional local. Fazendo isto, basta copiar e colar no servidor as pastas geradas pelo pacote.
+
+- Dentro do Windows Server deve-se, depois de ter escolhido uma pasta para o pacote gerado do projeto "ISV" (único pacote que precisa ser gerado), criar um site dentro da aplicação do "IIS" apontando para a pasta aonde o pacote do projeto "ISV" foi descarregado. Após isto é necessário adicionar uma vinculação ("Binding") ao domínio que for desejado, e na porta desejada. Feito isso, configurado um servidor DNS, o domínio registrado e pago no site <http://registro.br>, e esperado o tempo de propagação do domínio o site estará disponível para acesso pelo domínio desejado e com todas as funcionalidades localmente testadas.
